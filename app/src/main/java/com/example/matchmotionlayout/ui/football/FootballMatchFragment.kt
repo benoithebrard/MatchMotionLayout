@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.databinding.FragmentFootballBinding
+import com.example.matchmotionlayout.ui.adapter.DummyRecyclerAdapter
 
 class FootballMatchFragment : Fragment() {
 
@@ -20,6 +21,14 @@ class FootballMatchFragment : Fragment() {
     }.also { binding ->
         viewBinding = binding
     }.root
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewBinding?.apply {
+            scrollableContent.adapter = DummyRecyclerAdapter()
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
