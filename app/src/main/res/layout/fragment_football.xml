@@ -21,27 +21,30 @@
             android:id="@+id/top_section"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:background="@android:color/darker_gray"
+            android:background="@color/no_man_grey_500"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:id="@+id/toolbar"
+            android:id="@+id/match_header"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@android:color/holo_purple"
+            android:background="@color/no_man_grey_100"
             android:elevation="4dp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_toolbar"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintTop_toBottomOf="@id/top_section" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/navigation_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/first_team_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/icon_background"
             android:elevation="4dp"
-            android:padding="24dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/cruelty_free" />
+            app:layout_constraintTop_toBottomOf="@id/top_section"
+            app:srcCompat="@drawable/cookie"
+            app:tint="@color/white" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/toolbar_title"
@@ -52,12 +55,12 @@
             android:textColor="@android:color/holo_orange_dark"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/navigation_icon"
-            app:layout_constraintStart_toEndOf="@+id/navigation_icon"
-            app:layout_constraintTop_toTopOf="@+id/navigation_icon" />
+            app:layout_constraintBottom_toBottomOf="@+id/first_team_icon"
+            app:layout_constraintStart_toEndOf="@+id/first_team_icon"
+            app:layout_constraintTop_toTopOf="@+id/first_team_icon" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/menu_icon"
+            android:id="@+id/second_team_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="4dp"
@@ -76,25 +79,31 @@
             android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/navigation_icon"
+            app:layout_constraintTop_toBottomOf="@id/first_team_icon"
             app:queryHint="Search" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_toolbar"
+            android:id="@+id/guideline_header_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="132dp" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_middle_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/scrollable_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline_toolbar"
+            app:layout_constraintTop_toBottomOf="@id/guideline_header_bottom"
             tools:listitem="@layout/dummy_list_item" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
