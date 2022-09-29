@@ -18,69 +18,43 @@
         app:layoutDescription="@xml/sample_collapsing_animation_scene">
 
         <View
-            android:id="@+id/top_section"
+            android:id="@+id/top_info_banner"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:background="@color/no_man_grey_500"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:id="@+id/match_header"
+            android:id="@+id/header_background"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/no_man_grey_100"
-            android:elevation="4dp"
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
-            app:layout_constraintTop_toBottomOf="@id/top_section" />
+            app:layout_constraintTop_toBottomOf="@id/top_info_banner" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/first_team_icon"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:background="@drawable/icon_background"
-            android:elevation="4dp"
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/top_section"
+            app:layout_constraintTop_toBottomOf="@id/top_info_banner"
             app:srcCompat="@drawable/cookie"
             app:tint="@color/white" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="4dp"
-            android:text="MotionLayout"
-            android:textColor="@android:color/holo_orange_dark"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/first_team_icon"
-            app:layout_constraintStart_toEndOf="@+id/first_team_icon"
-            app:layout_constraintTop_toTopOf="@+id/first_team_icon" />
-
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/second_team_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="4dp"
-            android:padding="24dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/icon_background"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/diamond" />
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@android:color/holo_green_light"
-            android:elevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/first_team_icon"
-            app:queryHint="Search" />
+            app:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/top_info_banner"
+            app:srcCompat="@drawable/hive"
+            app:tint="@color/white" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_header_bottom"
