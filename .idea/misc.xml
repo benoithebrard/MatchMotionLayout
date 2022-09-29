@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/cookie-48px.xml" value="0.1225" />
+        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/sentiment_very_satisfied-48px.xml" value="0.1225" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.259375" />
       </map>
     </option>
