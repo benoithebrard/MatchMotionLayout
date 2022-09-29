@@ -7,14 +7,14 @@
 
         <variable
             name="viewModel"
-            type="com.example.matchmotionlayout.ui.home.FootballMatchViewModel" />
+            type="com.example.matchmotionlayout.ui.football.FootballMatchViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.FootballMatchFragment">
+        tools:context=".ui.football.FootballMatchFragment">
 
         <TextView
             android:id="@+id/text_home"
