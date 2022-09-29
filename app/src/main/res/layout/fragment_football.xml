@@ -70,6 +70,13 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent=".5" />
 
+        <View
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/teal_200"
+            app:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/scrollable_content"
             android:layout_width="match_parent"
@@ -77,7 +84,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline_header_bottom"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout"
             tools:listitem="@layout/dummy_list_item" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>

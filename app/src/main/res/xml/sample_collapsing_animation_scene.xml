@@ -39,6 +39,12 @@
             motion:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
             motion:layout_constraintTop_toBottomOf="@id/top_info_banner" />
 
+    <!--    <Constraint
+            android:id="@id/scrollable_content"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/streaming_content" />
+-->
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -69,5 +75,11 @@
             motion:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
             motion:layout_constraintTop_toBottomOf="@id/top_info_banner" />
 
+    <!--    <Constraint
+            android:id="@id/scrollable_content"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
+-->
     </ConstraintSet>
 </MotionScene>
