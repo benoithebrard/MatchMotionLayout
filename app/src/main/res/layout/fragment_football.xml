@@ -37,6 +37,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:background="@drawable/icon_background"
+            android:padding="2dp"
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +50,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:background="@drawable/icon_background"
+            android:padding="2dp"
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
@@ -70,11 +72,31 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent=".5" />
 
+        <FrameLayout
+            android:id="@+id/streaming_player"
+            android:layout_width="match_parent"
+            android:layout_height="236dp"
+            android:background="@color/purple_500"
+            app:layout_constraintTop_toBottomOf="@id/guideline_header_bottom">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:src="@drawable/cruelty_free"
+                app:tint="@color/white" />
+
+        </FrameLayout>
+
         <View
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:layout_marginTop="236dp"
             android:background="@color/teal_200"
+            app:layout_constraintBottom_toTopOf="@id/scrollable_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
 
         <androidx.recyclerview.widget.RecyclerView

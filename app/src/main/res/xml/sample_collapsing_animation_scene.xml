@@ -23,6 +23,7 @@
             android:id="@id/first_team_icon"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:padding="2dp"
             motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             motion:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             motion:layout_constraintHorizontal_bias=".5"
@@ -33,18 +34,23 @@
             android:id="@id/second_team_icon"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:padding="2dp"
             motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintHorizontal_bias=".5"
             motion:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
             motion:layout_constraintTop_toBottomOf="@id/top_info_banner" />
 
-    <!--    <Constraint
-            android:id="@id/scrollable_content"
+        <Constraint
+            android:id="@id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="236dp"
+            motion:layout_constraintBottom_toTopOf="@id/scrollable_content"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/streaming_content" />
--->
+            motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
+
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -59,6 +65,7 @@
             android:id="@id/first_team_icon"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:padding="1dp"
             motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             motion:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             motion:layout_constraintHorizontal_bias="1"
@@ -69,17 +76,22 @@
             android:id="@id/second_team_icon"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:padding="1dp"
             motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintHorizontal_bias="0"
             motion:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
             motion:layout_constraintTop_toBottomOf="@id/top_info_banner" />
 
-    <!--    <Constraint
-            android:id="@id/scrollable_content"
+        <Constraint
+            android:id="@id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="0dp"
+            motion:layout_constraintBottom_toTopOf="@id/scrollable_content"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
--->
+
     </ConstraintSet>
 </MotionScene>
