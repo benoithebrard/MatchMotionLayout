@@ -31,10 +31,15 @@ android {
     }
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 }
 
 dependencies {
+
+    implementation "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-viewpager2:4.0.0"
+    implementation "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-paging:4.0.0"
+    implementation "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-viewpager2:4.0.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
