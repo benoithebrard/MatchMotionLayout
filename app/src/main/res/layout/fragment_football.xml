@@ -13,9 +13,16 @@
 
     <androidx.constraintlayout.motion.widget.MotionLayout
         android:layout_width="match_parent"
-        android:background="@android:color/holo_blue_dark"
         android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_dark"
         app:layoutDescription="@xml/sample_collapsing_animation_scene">
+
+        <View
+            android:id="@+id/top_section"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/toolbar"
@@ -24,7 +31,7 @@
             android:background="@android:color/holo_purple"
             android:elevation="4dp"
             app:layout_constraintBottom_toTopOf="@id/guideline_toolbar"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/top_section" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/navigation_icon"
@@ -77,8 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="140dp" />
-
+            app:layout_constraintGuide_begin="132dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/scrollable_content"
