@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/holo_blue_dark"
-        app:layoutDescription="@xml/sample_collapsing_animation_scene">
+        app:layoutDescription="@xml/football_collapsing_animation_scene">
 
         <View
             android:id="@+id/top_info_banner"
@@ -87,6 +87,29 @@
                 app:tint="@color/white" />
 
         </FrameLayout>
+
+        <!--
+                <View
+                    android:id="@+id/primary_tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/no_man_grey_700"
+                    app:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/streaming_player" />
+
+                <View
+                    android:id="@+id/selected_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:alpha=".2"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/primary_tab_layout"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/primary_tab_layout" />
+        -->
 
         <View
             android:id="@+id/tab_layout"
