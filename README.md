@@ -1,6 +1,10 @@
 # MatchMotionLayout
 
-This demo shows how to use a MotionLayout to animate the screen header of a sport match UI, when the user scrolls on a RecyclerView
+This demo showcases MotionLayout to animate some UI elements, based on user scrolling
 
-https://user-images.githubusercontent.com/31190927/193276049-a3b1b573-35ef-4282-b3d9-b51fc66356bd.mov
+
+
+https://user-images.githubusercontent.com/31190927/193277139-a73afea7-8641-42bd-8853-b8b6850ba85d.mov
+
+
 
