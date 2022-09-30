@@ -55,8 +55,9 @@
             android:background="@drawable/icon_background"
             android:elevation="1dp"
             android:padding="2dp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintBottom_toTopOf="@id/second_team_name"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
             app:layout_constraintTop_toBottomOf="@id/top_info_banner"
             app:srcCompat="@drawable/hive"
@@ -87,6 +88,7 @@
             android:text="Team Hive"
             android:textColor="@color/purple_200"
             android:textSize="11sp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintEnd_toEndOf="@id/second_team_icon"
             app:layout_constraintStart_toStartOf="@id/second_team_icon"
             app:layout_constraintTop_toBottomOf="@id/second_team_icon" />
@@ -101,6 +103,17 @@
             app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/first_team_name" />
+
+        <View
+            android:id="@+id/second_team_form"
+            android:layout_width="40dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/no_man_sky_200"
+            android:elevation="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/second_team_name" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_header_bottom"

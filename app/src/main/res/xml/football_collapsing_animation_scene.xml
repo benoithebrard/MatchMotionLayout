@@ -17,6 +17,42 @@
 
     </Transition>
 
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:framePosition="0"
+            motion:motionTarget="@id/first_team_form">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="50"
+            motion:motionTarget="@id/first_team_form">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0" />
+        </KeyAttribute>
+    </KeyFrameSet>
+
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:framePosition="0"
+            motion:motionTarget="@id/second_team_form">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="50"
+            motion:motionTarget="@id/second_team_form">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0" />
+        </KeyAttribute>
+    </KeyFrameSet>
+
     <ConstraintSet android:id="@+id/start">
 
         <Constraint
@@ -36,11 +72,12 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:padding="2dp"
-            motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            motion:layout_constraintBottom_toTopOf="@id/second_team_name"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintHorizontal_bias=".5"
             motion:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
-            motion:layout_constraintTop_toBottomOf="@id/top_info_banner" />
+            motion:layout_constraintTop_toBottomOf="@id/top_info_banner"
+            motion:layout_constraintVertical_chainStyle="packed" />
 
         <Constraint
             android:id="@id/primary_tab_layout"
@@ -66,6 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             motion:layout_constraintEnd_toEndOf="@id/second_team_icon"
             motion:layout_constraintStart_toStartOf="@id/second_team_icon"
             motion:layout_constraintTop_toBottomOf="@id/second_team_icon" />
@@ -127,16 +165,6 @@
             motion:layout_constraintBottom_toBottomOf="@id/second_team_icon"
             motion:layout_constraintStart_toEndOf="@id/second_team_icon"
             motion:layout_constraintTop_toTopOf="@id/second_team_icon" />
-
-        <Constraint
-            android:id="@+id/first_team_form"
-            android:layout_width="40dp"
-            android:layout_height="6dp"
-            android:alpha="0"
-            android:background="@color/no_man_sky_300"
-            motion:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/first_team_name" />
 
     </ConstraintSet>
 </MotionScene>
