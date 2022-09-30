@@ -115,6 +115,23 @@
             app:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
             app:layout_constraintTop_toBottomOf="@id/second_team_name" />
 
+        <TextView
+            android:id="@+id/match_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/score_background"
+            android:elevation="1dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:minWidth="47dp"
+            android:minHeight="32dp"
+            android:text="1 - 2"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_info_banner" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_header_bottom"
             android:layout_width="wrap_content"
@@ -145,7 +162,7 @@
 
         </FrameLayout>
 
-        <View
+        <FrameLayout
             android:id="@+id/primary_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
