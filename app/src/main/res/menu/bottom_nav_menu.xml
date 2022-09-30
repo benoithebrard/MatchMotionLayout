@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/navigation_team"
-        android:icon="@drawable/eco"
+        android:icon="@drawable/diamond"
         android:title="@string/title_team" />
 
 </menu>

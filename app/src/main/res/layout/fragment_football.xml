@@ -86,7 +86,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:src="@drawable/cruelty_free"
+                android:src="@drawable/diamond"
                 app:tint="@color/white" />
 
         </FrameLayout>
