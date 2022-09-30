@@ -50,6 +50,15 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/streaming_player" />
 
+        <Constraint
+            android:id="@id/first_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            motion:layout_constraintEnd_toEndOf="@id/first_team_icon"
+            motion:layout_constraintStart_toStartOf="@id/first_team_icon"
+            motion:layout_constraintTop_toBottomOf="@id/first_team_icon" />
+
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -89,6 +98,15 @@
             motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@id/first_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            motion:layout_constraintBottom_toBottomOf="@id/first_team_icon"
+            motion:layout_constraintEnd_toStartOf="@id/first_team_icon"
+            motion:layout_constraintTop_toTopOf="@id/first_team_icon" />
 
     </ConstraintSet>
 </MotionScene>
