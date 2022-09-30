@@ -98,7 +98,8 @@
             android:background="@color/no_man_grey_700"
             app:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/streaming_player" />
 
         <View
             android:id="@+id/selected_tab"
@@ -119,7 +120,7 @@
             app:layout_constraintBottom_toTopOf="@id/scrollable_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/streaming_player" />
+            app:layout_constraintTop_toBottomOf="@id/primary_tab_layout" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/scrollable_content"
