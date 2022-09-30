@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/no_man_grey_100"
+            android:elevation="1dp"
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintTop_toBottomOf="@id/top_info_banner" />
 
@@ -37,6 +38,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:background="@drawable/icon_background"
+            android:elevation="1dp"
             android:padding="2dp"
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
@@ -50,6 +52,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:background="@drawable/icon_background"
+            android:elevation="1dp"
             android:padding="2dp"
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintEnd_toEndOf="parent"
@@ -88,31 +91,28 @@
 
         </FrameLayout>
 
-        <!--
-                <View
-                    android:id="@+id/primary_tab_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@color/no_man_grey_700"
-                    app:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/streaming_player" />
-
-                <View
-                    android:id="@+id/selected_tab"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:alpha=".2"
-                    android:background="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@id/primary_tab_layout"
-                    app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/primary_tab_layout" />
-        -->
+        <View
+            android:id="@+id/primary_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/no_man_grey_700"
+            app:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <View
-            android:id="@+id/tab_layout"
+            android:id="@+id/selected_tab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha=".2"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/primary_tab_layout"
+            app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/primary_tab_layout" />
+
+        <View
+            android:id="@+id/secondary_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@color/teal_200"
@@ -128,7 +128,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tab_layout"
+            app:layout_constraintTop_toBottomOf="@id/secondary_tab_layout"
             tools:listitem="@layout/dummy_list_item" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
