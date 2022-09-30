@@ -112,7 +112,7 @@
             app:layout_constraintBottom_toTopOf="@id/first_team_name"
             app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/top_info_banner"
+            app:layout_constraintTop_toTopOf="@id/match_score"
             app:layout_constraintVertical_chainStyle="packed"
             app:srcCompat="@drawable/cookie"
             app:tint="@color/white" />
@@ -127,7 +127,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
-            app:layout_constraintTop_toBottomOf="@id/top_info_banner"
+            app:layout_constraintTop_toTopOf="@id/match_score"
             app:srcCompat="@drawable/hive"
             app:tint="@color/white" />
 
@@ -140,7 +140,7 @@
             android:text="Team Cookie"
             android:textColor="@color/purple_200"
             android:textSize="11sp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintBottom_toBottomOf="@id/match_score"
             app:layout_constraintEnd_toEndOf="@id/first_team_icon"
             app:layout_constraintStart_toStartOf="@id/first_team_icon"
             app:layout_constraintTop_toBottomOf="@id/first_team_icon" />
@@ -154,7 +154,7 @@
             android:text="Team Hive"
             android:textColor="@color/purple_200"
             android:textSize="11sp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintBottom_toBottomOf="@id/match_score"
             app:layout_constraintEnd_toEndOf="@id/second_team_icon"
             app:layout_constraintStart_toStartOf="@id/second_team_icon"
             app:layout_constraintTop_toBottomOf="@id/second_team_icon" />
