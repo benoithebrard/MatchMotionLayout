@@ -100,97 +100,20 @@
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintTop_toBottomOf="@id/top_info_banner" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/first_team_icon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/icon_background"
-            android:padding="2dp"
-            app:layout_constraintBottom_toTopOf="@id/first_team_name"
-            app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/match_score"
-            app:layout_constraintVertical_chainStyle="packed"
-            app:srcCompat="@drawable/cookie"
-            app:tint="@color/white" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/second_team_icon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/icon_background"
-            android:padding="2dp"
-            app:layout_constraintBottom_toTopOf="@id/second_team_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
-            app:layout_constraintTop_toTopOf="@id/match_score"
-            app:srcCompat="@drawable/hive"
-            app:tint="@color/white" />
-
-        <TextView
-            android:id="@+id/first_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Team Cookie"
-            android:textColor="@color/purple_200"
-            android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="@id/match_score"
-            app:layout_constraintEnd_toEndOf="@id/first_team_icon"
-            app:layout_constraintStart_toStartOf="@id/first_team_icon"
-            app:layout_constraintTop_toBottomOf="@id/first_team_icon" />
-
-        <TextView
-            android:id="@+id/second_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Team Hive"
-            android:textColor="@color/purple_200"
-            android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="@id/match_score"
-            app:layout_constraintEnd_toEndOf="@id/second_team_icon"
-            app:layout_constraintStart_toStartOf="@id/second_team_icon"
-            app:layout_constraintTop_toBottomOf="@id/second_team_icon" />
-
-        <View
-            android:id="@+id/first_team_form"
-            android:layout_width="40dp"
-            android:layout_height="6dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/no_man_sky_300"
-            app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/first_team_name" />
-
-        <View
-            android:id="@+id/second_team_form"
-            android:layout_width="40dp"
-            android:layout_height="6dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/no_man_sky_200"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
-            app:layout_constraintTop_toBottomOf="@id/second_team_name" />
-
-        <TextView
-            android:id="@+id/match_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/score_background"
-            android:fontFamily="sans-serif-black"
-            android:gravity="center"
-            android:minWidth="47dp"
-            android:minHeight="32dp"
-            android:text="1 - 2"
-            android:textSize="15sp"
+        <FrameLayout
+            android:id="@+id/overall_header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/no_man_grey_100"
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/top_info_banner" />
+            app:layout_constraintTop_toBottomOf="@id/top_info_banner">
+
+            <include
+                layout="@layout/item_overall_score"
+                app:viewModel="@{viewModel}" />
+
+        </FrameLayout>
+
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>
