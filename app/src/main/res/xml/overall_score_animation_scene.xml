@@ -53,6 +53,58 @@
         </KeyAttribute>
     </KeyFrameSet>
 
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:framePosition="0"
+            motion:motionTarget="@id/first_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="50"
+            motion:motionTarget="@id/first_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="100"
+            motion:motionTarget="@id/first_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+    </KeyFrameSet>
+
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:framePosition="0"
+            motion:motionTarget="@id/second_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="50"
+            motion:motionTarget="@id/second_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="100"
+            motion:motionTarget="@id/second_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+    </KeyFrameSet>
+
     <ConstraintSet android:id="@+id/start">
 
         <Constraint
