@@ -81,15 +81,6 @@
             motion:layout_constraintTop_toTopOf="@id/match_score" />
 
         <Constraint
-            android:id="@id/primary_tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            motion:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/streaming_player" />
-
-        <Constraint
             android:id="@id/first_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -129,7 +120,7 @@
             motion:layout_constraintEnd_toStartOf="@id/match_score"
             motion:layout_constraintHorizontal_bias="1"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/top_info_banner" />
+            motion:layout_constraintTop_toTopOf="parent" />
 
         <Constraint
             android:id="@id/second_team_icon"
@@ -141,15 +132,7 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintHorizontal_bias="0"
             motion:layout_constraintStart_toEndOf="@id/match_score"
-            motion:layout_constraintTop_toBottomOf="@id/top_info_banner" />
-
-        <Constraint
-            android:id="@id/primary_tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" />
+            motion:layout_constraintTop_toTopOf="parent" />
 
         <Constraint
             android:id="@id/first_team_name"

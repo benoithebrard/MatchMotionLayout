@@ -17,68 +17,7 @@
 
     </Transition>
 
-    <KeyFrameSet>
-        <KeyAttribute
-            motion:framePosition="0"
-            motion:motionTarget="@id/first_team_form">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="1" />
-        </KeyAttribute>
-
-        <KeyAttribute
-            motion:framePosition="50"
-            motion:motionTarget="@id/first_team_form">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="0" />
-        </KeyAttribute>
-    </KeyFrameSet>
-
-    <KeyFrameSet>
-        <KeyAttribute
-            motion:framePosition="0"
-            motion:motionTarget="@id/second_team_form">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="1" />
-        </KeyAttribute>
-
-        <KeyAttribute
-            motion:framePosition="50"
-            motion:motionTarget="@id/second_team_form">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="0" />
-        </KeyAttribute>
-    </KeyFrameSet>
-
     <ConstraintSet android:id="@+id/start">
-
-        <Constraint
-            android:id="@id/first_team_icon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:padding="2dp"
-            motion:layout_constraintBottom_toTopOf="@id/first_team_name"
-            motion:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
-            motion:layout_constraintHorizontal_bias=".5"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/top_info_banner"
-            motion:layout_constraintTop_toTopOf="@id/match_score"
-            motion:layout_constraintVertical_chainStyle="packed" />
-
-        <Constraint
-            android:id="@id/second_team_icon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:padding="2dp"
-            motion:layout_constraintBottom_toTopOf="@id/second_team_name"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintHorizontal_bias=".5"
-            motion:layout_constraintHorizontal_chainStyle="packed"
-            motion:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
-            motion:layout_constraintTop_toTopOf="@id/match_score" />
 
         <Constraint
             android:id="@id/primary_tab_layout"
@@ -88,26 +27,6 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/streaming_player" />
-
-        <Constraint
-            android:id="@id/first_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            motion:layout_constraintBottom_toBottomOf="@id/match_score"
-            motion:layout_constraintEnd_toEndOf="@id/first_team_icon"
-            motion:layout_constraintStart_toStartOf="@id/first_team_icon"
-            motion:layout_constraintTop_toBottomOf="@id/first_team_icon" />
-
-        <Constraint
-            android:id="@id/second_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            motion:layout_constraintBottom_toBottomOf="@id/match_score"
-            motion:layout_constraintEnd_toEndOf="@id/second_team_icon"
-            motion:layout_constraintStart_toStartOf="@id/second_team_icon"
-            motion:layout_constraintTop_toBottomOf="@id/second_team_icon" />
 
     </ConstraintSet>
 
@@ -120,54 +39,12 @@
             motion:layout_constraintGuide_begin="88dp" />
 
         <Constraint
-            android:id="@id/first_team_icon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="12dp"
-            android:padding="1dp"
-            motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
-            motion:layout_constraintEnd_toStartOf="@id/match_score"
-            motion:layout_constraintHorizontal_bias="1"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/top_info_banner" />
-
-        <Constraint
-            android:id="@id/second_team_icon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="12dp"
-            android:padding="1dp"
-            motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintHorizontal_bias="0"
-            motion:layout_constraintStart_toEndOf="@id/match_score"
-            motion:layout_constraintTop_toBottomOf="@id/top_info_banner" />
-
-        <Constraint
             android:id="@id/primary_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent" />
-
-        <Constraint
-            android:id="@id/first_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            motion:layout_constraintBottom_toBottomOf="@id/first_team_icon"
-            motion:layout_constraintEnd_toStartOf="@id/first_team_icon"
-            motion:layout_constraintTop_toTopOf="@id/first_team_icon" />
-
-        <Constraint
-            android:id="@id/second_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            motion:layout_constraintBottom_toBottomOf="@id/second_team_icon"
-            motion:layout_constraintStart_toEndOf="@id/second_team_icon"
-            motion:layout_constraintTop_toTopOf="@id/second_team_icon" />
 
     </ConstraintSet>
 </MotionScene>
