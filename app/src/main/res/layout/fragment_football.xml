@@ -77,19 +77,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/primary_tab_layout" />
 
-        <FrameLayout
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/scrollable_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/secondary_tab_layout">
-
-            <include
-                layout="@layout/item_vertical_content"
-                app:viewModel="@{viewModel}" />
-
-        </FrameLayout>
+            app:layout_constraintTop_toBottomOf="@id/secondary_tab_layout" />
 
         <View
             android:id="@+id/top_info_banner"

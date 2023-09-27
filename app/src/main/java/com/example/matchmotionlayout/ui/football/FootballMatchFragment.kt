@@ -5,8 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.matchmotionlayout.R
 import com.example.matchmotionlayout.databinding.FragmentFootballBinding
-import com.example.matchmotionlayout.ui.adapter.DummyRecyclerAdapter
+import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
 
 class FootballMatchFragment : Fragment() {
 
@@ -25,9 +26,10 @@ class FootballMatchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-     /*   viewBinding?.apply {
-            scrollableContent.adapter = DummyRecyclerAdapter()
-        }*/
+        childFragmentManager.beginTransaction().replace(
+            R.id.scrollable_content,
+            VerticalContentFragment()
+        ).commit()
     }
 
     override fun onDestroyView() {
