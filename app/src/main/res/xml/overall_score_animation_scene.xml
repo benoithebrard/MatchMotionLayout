@@ -63,11 +63,11 @@
         </KeyAttribute>
 
         <KeyAttribute
-            motion:framePosition="50"
+            motion:framePosition="80"
             motion:motionTarget="@id/first_team_name">
             <CustomAttribute
                 motion:attributeName="alpha"
-                motion:customFloatValue="0" />
+                motion:customFloatValue=".25" />
         </KeyAttribute>
 
         <KeyAttribute
@@ -89,11 +89,11 @@
         </KeyAttribute>
 
         <KeyAttribute
-            motion:framePosition="50"
+            motion:framePosition="80"
             motion:motionTarget="@id/second_team_name">
             <CustomAttribute
                 motion:attributeName="alpha"
-                motion:customFloatValue="0" />
+                motion:customFloatValue=".25" />
         </KeyAttribute>
 
         <KeyAttribute
