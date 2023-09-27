@@ -25,9 +25,9 @@ class FootballMatchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewBinding?.apply {
+     /*   viewBinding?.apply {
             scrollableContent.adapter = DummyRecyclerAdapter()
-        }
+        }*/
     }
 
     override fun onDestroyView() {
