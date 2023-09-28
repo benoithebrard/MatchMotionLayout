@@ -6,17 +6,7 @@
         android:id="@+id/scoreboard_transition_overall"
         motion:constraintSetEnd="@+id/end_scoreboard_overall"
         motion:constraintSetStart="@id/start"
-        motion:motionInterpolator="easeInOut">
-
-        <OnSwipe
-            motion:dragDirection="dragUp"
-            motion:dragScale="1"
-            motion:moveWhenScrollAtTop="true"
-            motion:onTouchUp="stop"
-            motion:touchAnchorId="@id/scrollable_content"
-            motion:touchAnchorSide="top" />
-
-    </Transition>
+        motion:motionInterpolator="easeInOut" />
 
     <KeyFrameSet>
         <KeyAttribute
@@ -110,17 +100,7 @@
         android:id="@+id/scoreboard_transition_legacy"
         motion:constraintSetEnd="@+id/end_scoreboard_legacy"
         motion:constraintSetStart="@id/start"
-        motion:motionInterpolator="easeInOut">
-
-        <OnSwipe
-            motion:dragDirection="dragUp"
-            motion:dragScale="1"
-            motion:moveWhenScrollAtTop="true"
-            motion:onTouchUp="stop"
-            motion:touchAnchorId="@id/scrollable_content"
-            motion:touchAnchorSide="top" />
-
-    </Transition>
+        motion:motionInterpolator="easeInOut" />
 
     <ConstraintSet android:id="@+id/start">
 
