@@ -18,6 +18,94 @@
 
     </Transition>
 
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:framePosition="0"
+            motion:motionTarget="@id/first_team_form">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="50"
+            motion:motionTarget="@id/first_team_form">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0" />
+        </KeyAttribute>
+    </KeyFrameSet>
+
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:framePosition="0"
+            motion:motionTarget="@id/second_team_form">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="50"
+            motion:motionTarget="@id/second_team_form">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0" />
+        </KeyAttribute>
+    </KeyFrameSet>
+
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:framePosition="0"
+            motion:motionTarget="@id/first_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="80"
+            motion:motionTarget="@id/first_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue=".25" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="100"
+            motion:motionTarget="@id/first_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+    </KeyFrameSet>
+
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:framePosition="0"
+            motion:motionTarget="@id/second_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="80"
+            motion:motionTarget="@id/second_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue=".25" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="100"
+            motion:motionTarget="@id/second_team_name">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+    </KeyFrameSet>
+
     <Transition
         android:id="@+id/scoreboard_transition_legacy"
         motion:constraintSetEnd="@+id/end_scoreboard_legacy"
@@ -33,94 +121,6 @@
             motion:touchAnchorSide="top" />
 
     </Transition>
-
-    <KeyFrameSet>
-        <KeyAttribute
-            motion:framePosition="0"
-            motion:motionTarget="@id/first_team_form">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="1" />
-        </KeyAttribute>
-
-        <KeyAttribute
-            motion:framePosition="50"
-            motion:motionTarget="@id/first_team_form">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="0" />
-        </KeyAttribute>
-    </KeyFrameSet>
-
-    <KeyFrameSet>
-        <KeyAttribute
-            motion:framePosition="0"
-            motion:motionTarget="@id/second_team_form">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="1" />
-        </KeyAttribute>
-
-        <KeyAttribute
-            motion:framePosition="50"
-            motion:motionTarget="@id/second_team_form">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="0" />
-        </KeyAttribute>
-    </KeyFrameSet>
-
-    <KeyFrameSet>
-        <KeyAttribute
-            motion:framePosition="0"
-            motion:motionTarget="@id/first_team_name">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="1" />
-        </KeyAttribute>
-
-        <KeyAttribute
-            motion:framePosition="80"
-            motion:motionTarget="@id/first_team_name">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue=".25" />
-        </KeyAttribute>
-
-        <KeyAttribute
-            motion:framePosition="100"
-            motion:motionTarget="@id/first_team_name">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="1" />
-        </KeyAttribute>
-    </KeyFrameSet>
-
-    <KeyFrameSet>
-        <KeyAttribute
-            motion:framePosition="0"
-            motion:motionTarget="@id/second_team_name">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="1" />
-        </KeyAttribute>
-
-        <KeyAttribute
-            motion:framePosition="80"
-            motion:motionTarget="@id/second_team_name">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue=".25" />
-        </KeyAttribute>
-
-        <KeyAttribute
-            motion:framePosition="100"
-            motion:motionTarget="@id/second_team_name">
-            <CustomAttribute
-                motion:attributeName="alpha"
-                motion:customFloatValue="1" />
-        </KeyAttribute>
-    </KeyFrameSet>
 
     <ConstraintSet android:id="@+id/start">
 
