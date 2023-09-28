@@ -1,10 +1,13 @@
 # MatchMotionLayout
 
-This demo showcases MotionLayout to animate some UI elements, based on user scrolling
+This demo showcases MotionLayout to animate some UI elements, based on user scrolling. Nested layouts and legacy scrolling is also supported
 
 
 
-https://user-images.githubusercontent.com/31190927/193277139-a73afea7-8641-42bd-8853-b8b6850ba85d.mov
+
+https://github.com/benoithebrard/MatchMotionLayout/assets/31190927/3b575b90-20b8-40bd-ae4a-7395845016e9
+
+
 
 
 
