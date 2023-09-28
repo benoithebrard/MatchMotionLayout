@@ -1,4 +1,4 @@
-package com.example.matchmotionlayout.ui.football
+package com.example.matchmotionlayout.ui.match
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,20 +8,20 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.R
-import com.example.matchmotionlayout.databinding.FragmentFootballBinding
+import com.example.matchmotionlayout.databinding.FragmentMatchBinding
 import com.example.matchmotionlayout.ui.utils.NestedMotionLayoutListener
 import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
 
-class FootballMatchFragment : Fragment() {
+class MatchFragment : Fragment() {
 
-    private var viewBinding: FragmentFootballBinding? = null
+    private var viewBinding: FragmentMatchBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View = FragmentFootballBinding.inflate(inflater).apply {
-        viewModel = FootballMatchViewModel()
+    ): View = FragmentMatchBinding.inflate(inflater).apply {
+        viewModel = MatchViewModel()
     }.also { binding ->
         viewBinding = binding
     }.root
@@ -36,8 +36,8 @@ class FootballMatchFragment : Fragment() {
 
         viewBinding?.apply {
             NestedMotionLayoutListener(this).setup()
-            rootContainer.setTransition(R.id.match_transition_overall)
-            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
+            rootContainer.setTransition(R.id.match_transition_legacy)
+            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_legacy)
         }
     }
 

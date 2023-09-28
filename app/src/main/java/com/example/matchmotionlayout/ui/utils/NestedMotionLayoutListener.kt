@@ -2,10 +2,10 @@ package com.example.matchmotionlayout.ui.utils
 
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.children
-import com.example.matchmotionlayout.databinding.FragmentFootballBinding
+import com.example.matchmotionlayout.databinding.FragmentMatchBinding
 
 class NestedMotionLayoutListener(
-    private val viewBinding: FragmentFootballBinding
+    private val viewBinding: FragmentMatchBinding
 ) : MotionLayout.TransitionListener {
 
     override fun onTransitionStarted(motionLayout: MotionLayout?, startId: Int, endId: Int) {

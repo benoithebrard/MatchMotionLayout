@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.databinding.FragmentVerticalContentBinding
-import com.example.matchmotionlayout.ui.football.FootballMatchViewModel
+import com.example.matchmotionlayout.ui.match.MatchViewModel
 
 class VerticalContentFragment : Fragment() {
 
@@ -17,7 +17,7 @@ class VerticalContentFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View = FragmentVerticalContentBinding.inflate(inflater).apply {
-        viewModel = FootballMatchViewModel()
+        viewModel = MatchViewModel()
     }.also { binding ->
         viewBinding = binding
     }.root
