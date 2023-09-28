@@ -8,7 +8,11 @@ class NestedMotionLayoutListener(
     private val viewBinding: FragmentMatchBinding
 ) : MotionLayout.TransitionListener {
 
-    override fun onTransitionStarted(motionLayout: MotionLayout?, startId: Int, endId: Int) {
+    override fun onTransitionStarted(
+        motionLayout: MotionLayout?,
+        startId: Int,
+        endId: Int
+    ) {
         updateNestedMotionLayout(motionLayout)
     }
 
@@ -18,10 +22,13 @@ class NestedMotionLayoutListener(
         endId: Int,
         progress: Float
     ) {
-        updateNestedMotionLayout(motionLayout)
+        updateNestedMotionLayout(motionLayout, progress)
     }
 
-    override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
+    override fun onTransitionCompleted(
+        motionLayout: MotionLayout?,
+        currentId: Int
+    ) {
         updateNestedMotionLayout(motionLayout)
     }
 
@@ -31,7 +38,7 @@ class NestedMotionLayoutListener(
         positive: Boolean,
         progress: Float
     ) {
-        updateNestedMotionLayout(motionLayout)
+        updateNestedMotionLayout(motionLayout, progress)
     }
 
     fun setup() {
@@ -41,12 +48,15 @@ class NestedMotionLayoutListener(
         }
     }
 
-    private fun updateNestedMotionLayout(motionLayout: MotionLayout?) {
+    private fun updateNestedMotionLayout(
+        motionLayout: MotionLayout?,
+        progress: Float? = null
+    ) {
         motionLayout?.let { layout ->
             viewBinding.apply {
                 if (layout.id == rootContainer.id) {
                     (overallScoreboardContainer.children.first() as MotionLayout).progress =
-                        layout.progress
+                        progress ?: layout.progress
                 }
             }
         }
