@@ -18,18 +18,43 @@
         app:layoutDescription="@xml/fragment_match_scene">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_header_bottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="142dp" />
-
-        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_middle_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent=".5" />
+
+        <View
+            android:id="@+id/top_info_banner"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@color/no_man_grey_500"
+            android:elevation="1dp"
+            app:layout_constraintBottom_toTopOf="@id/overall_scoreboard_container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <FrameLayout
+            android:id="@+id/overall_scoreboard_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/no_man_grey_100"
+            android:elevation="1dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintTop_toBottomOf="@id/top_info_banner">
+
+            <include
+                layout="@layout/item_scoreboard_overall_score"
+                app:viewModel="@{viewModel}" />
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_header_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="142dp" />
 
         <FrameLayout
             android:id="@+id/streaming_player"
@@ -54,8 +79,6 @@
             android:layout_height="48dp"
             android:background="@color/no_man_grey_700"
             app:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/streaming_player" />
 
         <TextView
@@ -79,39 +102,14 @@
             android:layout_height="56dp"
             android:background="@color/teal_200"
             app:layout_constraintBottom_toTopOf="@id/scrollable_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/primary_tab_layout" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/scrollable_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/secondary_tab_layout" />
-
-        <View
-            android:id="@+id/top_info_banner"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:background="@color/no_man_grey_500"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <FrameLayout
-            android:id="@+id/overall_scoreboard_container"
-            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/no_man_grey_100"
-            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
-            app:layout_constraintTop_toBottomOf="@id/top_info_banner">
-
-            <include
-                layout="@layout/item_scoreboard_overall_score"
-                app:viewModel="@{viewModel}" />
-
-        </FrameLayout>
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/secondary_tab_layout" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>
