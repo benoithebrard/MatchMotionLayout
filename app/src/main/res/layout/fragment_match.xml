@@ -36,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="226dp"
             android:background="@color/purple_500"
+            app:layout_constraintBottom_toTopOf="@id/primary_tab_layout"
             app:layout_constraintTop_toBottomOf="@id/guideline_header_bottom">
 
             <ImageView
@@ -62,11 +63,11 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/purple_200"
+            android:fontFamily="sans-serif"
             android:gravity="center"
             android:text="Dummies"
             android:textColor="@color/white"
             android:textSize="14sp"
-            android:fontFamily="sans-serif"
             app:layout_constraintBottom_toBottomOf="@id/primary_tab_layout"
             app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             app:layout_constraintStart_toStartOf="parent"

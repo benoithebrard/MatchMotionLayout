@@ -12,7 +12,7 @@ import com.example.matchmotionlayout.databinding.FragmentMatchBinding
 import com.example.matchmotionlayout.ui.utils.NestedMotionLayoutListener
 import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
 
-class MatchFragment : Fragment() {
+class OverallMatchFragment : Fragment() {
 
     private var viewBinding: FragmentMatchBinding? = null
 

@@ -97,7 +97,7 @@
     </KeyFrameSet>
 
     <Transition
-        android:id="@+id/scoreboard_transition_legacy"
+        android:id="@+id/scoreboard_transition_overall_legacy"
         motion:constraintSetEnd="@+id/end_scoreboard_legacy"
         motion:constraintSetStart="@id/start"
         motion:motionInterpolator="easeInOut" />
