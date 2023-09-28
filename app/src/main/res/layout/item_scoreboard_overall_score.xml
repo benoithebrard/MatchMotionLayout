@@ -11,10 +11,11 @@
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/overall_scoreboard_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/no_man_sky_500"
-        app:layoutDescription="@xml/scoreboard_overall_scene">
+        app:layoutDescription="@xml/overall_scoreboard_scene">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_header_bottom"

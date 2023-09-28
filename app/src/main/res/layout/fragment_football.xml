@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/no_man_sky_500"
-        app:layoutDescription="@xml/football_collapsing_animation_scene">
+        app:layoutDescription="@xml/fragment_match_scene">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_header_bottom"
@@ -106,7 +106,7 @@
             app:layout_constraintTop_toBottomOf="@id/top_info_banner" />
 
         <FrameLayout
-            android:id="@+id/overall_header_container"
+            android:id="@+id/overall_scoreboard_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/no_man_grey_100"

@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.R
 import com.example.matchmotionlayout.databinding.FragmentFootballBinding
@@ -34,7 +36,8 @@ class FootballMatchFragment : Fragment() {
 
         viewBinding?.apply {
             NestedMotionLayoutListener(this).setup()
-            rootContainer.setTransition(R.id.transition_overall)
+            rootContainer.setTransition(R.id.match_transition_overall)
+            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
         }
     }
 

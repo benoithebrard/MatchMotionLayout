@@ -37,7 +37,7 @@ class NestedMotionLayoutListener(
     fun setup() {
         viewBinding.apply {
             rootContainer.setTransitionListener(this@NestedMotionLayoutListener)
-            (overallHeaderContainer.children.first() as MotionLayout).setTransitionListener(this@NestedMotionLayoutListener)
+            (overallScoreboardContainer.children.first() as MotionLayout).setTransitionListener(this@NestedMotionLayoutListener)
         }
     }
 
@@ -45,7 +45,7 @@ class NestedMotionLayoutListener(
         motionLayout?.let { layout ->
             viewBinding.apply {
                 if (layout.id == rootContainer.id) {
-                    (overallHeaderContainer.children.first() as MotionLayout).progress =
+                    (overallScoreboardContainer.children.first() as MotionLayout).progress =
                         layout.progress
                 }
             }
