@@ -36,22 +36,12 @@
 
     <ConstraintSet android:id="@+id/start">
 
-        <!--    <Constraint
-                android:id="@id/primary_tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                motion:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toBottomOf="@id/streaming_player" />
-    -->
-
         <Constraint
-            android:id="@id/streaming_player"
+            android:id="@id/primary_tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="226dp"
-            motion:layout_constraintBottom_toTopOf="@id/primary_tab_layout"
-            motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
+            android:layout_height="48dp"
+            motion:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
+            motion:layout_constraintTop_toBottomOf="@id/streaming_player" />
 
     </ConstraintSet>
 
@@ -64,20 +54,12 @@
             motion:layout_constraintGuide_begin="32dp" />
 
         <Constraint
-            android:id="@id/streaming_player"
+            android:id="@id/primary_tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="226dp"
-            motion:layout_constraintBottom_toBottomOf="@id/top_info_banner" />
+            android:layout_height="48dp"
+            motion:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
+            motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
 
-
-        <!--    <Constraint
-                android:id="@id/primary_tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
-    -->
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end_overall">
@@ -89,18 +71,11 @@
             motion:layout_constraintGuide_begin="88dp" />
 
         <Constraint
-            android:id="@id/streaming_player"
+            android:id="@id/primary_tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="226dp"
-            motion:layout_constraintBottom_toBottomOf="@id/guideline_header_bottom" />
+            android:layout_height="48dp"
+            motion:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
+            motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
 
-        <!--    <Constraint
-                android:id="@id/primary_tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
-    -->
     </ConstraintSet>
 </MotionScene>
