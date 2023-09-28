@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.R
 import com.example.matchmotionlayout.databinding.FragmentMatchBinding
 import com.example.matchmotionlayout.ui.utils.NestedMotionLayoutListener
+import com.example.matchmotionlayout.ui.utils.dpToPx
 import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
 
 class LegacyOverallMatchFragment : Fragment() {

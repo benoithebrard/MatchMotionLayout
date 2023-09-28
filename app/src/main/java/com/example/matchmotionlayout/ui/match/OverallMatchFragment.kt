@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.R
 import com.example.matchmotionlayout.databinding.FragmentMatchBinding
 import com.example.matchmotionlayout.ui.utils.NestedMotionLayoutListener
+import com.example.matchmotionlayout.ui.utils.dpToPx
 import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
 
 class OverallMatchFragment : Fragment() {
@@ -38,6 +39,7 @@ class OverallMatchFragment : Fragment() {
             NestedMotionLayoutListener(this).setup()
             rootContainer.setTransition(R.id.match_transition_overall)
             (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
+            guidelineHeaderBottom.setGuidelineBegin(150.dpToPx.toInt())
         }
     }
 
