@@ -57,12 +57,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/streaming_player" />
 
-        <View
+        <TextView
             android:id="@+id/selected_tab"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:alpha=".2"
-            android:background="@color/white"
+            android:background="@color/purple_200"
+            android:gravity="center"
+            android:text="Dummies"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"
             app:layout_constraintBottom_toBottomOf="@id/primary_tab_layout"
             app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             app:layout_constraintStart_toStartOf="parent"
