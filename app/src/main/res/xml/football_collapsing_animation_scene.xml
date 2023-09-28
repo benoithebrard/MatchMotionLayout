@@ -3,7 +3,7 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        android:id="@+id/header_transition_overall"
+        android:id="@+id/transition_overall"
         motion:constraintSetEnd="@+id/end_overall"
         motion:constraintSetStart="@id/start"
         motion:motionInterpolator="easeInOut">
@@ -19,7 +19,7 @@
     </Transition>
 
     <Transition
-        android:id="@+id/header_transition_legacy"
+        android:id="@+id/transition_legacy"
         motion:constraintSetEnd="@+id/end_legacy"
         motion:constraintSetStart="@id/start"
         motion:motionInterpolator="easeInOut">

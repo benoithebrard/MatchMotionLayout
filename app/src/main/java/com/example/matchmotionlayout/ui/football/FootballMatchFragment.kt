@@ -34,7 +34,7 @@ class FootballMatchFragment : Fragment() {
 
         viewBinding?.apply {
             NestedMotionLayoutListener(this).setup()
-            rootContainer.setTransition(R.id.header_transition_legacy)
+            rootContainer.setTransition(R.id.transition_overall)
         }
     }
 
