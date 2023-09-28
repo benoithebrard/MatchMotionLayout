@@ -110,7 +110,7 @@
             app:layout_constraintTop_toBottomOf="@id/top_info_banner">
 
             <include
-                layout="@layout/item_overall_score"
+                layout="@layout/item_scoreboard_overall_score"
                 app:viewModel="@{viewModel}" />
 
         </FrameLayout>
