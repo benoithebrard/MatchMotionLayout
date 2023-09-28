@@ -5,7 +5,7 @@ import androidx.core.view.children
 import com.example.matchmotionlayout.databinding.FragmentFootballBinding
 
 class NestedMotionLayoutListener(
-    val viewBinding: FragmentFootballBinding
+    private val viewBinding: FragmentFootballBinding
 ) : MotionLayout.TransitionListener {
 
     override fun onTransitionStarted(motionLayout: MotionLayout?, startId: Int, endId: Int) {
