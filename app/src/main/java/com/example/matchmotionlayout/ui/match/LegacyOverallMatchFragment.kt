@@ -38,7 +38,8 @@ class LegacyOverallMatchFragment : Fragment() {
         viewBinding?.apply {
             NestedMotionLayoutListener(this).setup()
             rootContainer.setTransition(R.id.match_transition_overall_legacy)
-            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall_legacy)
+            (overallScoreboardContainer.children.first() as MotionLayout)
+                .setTransition(R.id.scoreboard_transition_overall_legacy)
         }
     }
 
