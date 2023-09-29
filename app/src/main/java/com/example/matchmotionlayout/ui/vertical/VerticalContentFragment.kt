@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.databinding.FragmentVerticalContentBinding
-import com.example.matchmotionlayout.ui.match.MatchViewModel
+import com.example.matchmotionlayout.ui.viewmodel.MatchViewModel
 
 class VerticalContentFragment : Fragment() {
 

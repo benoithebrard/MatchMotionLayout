@@ -1,4 +1,4 @@
-package com.example.matchmotionlayout.ui.match
+package com.example.matchmotionlayout.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,8 +12,9 @@ import com.example.matchmotionlayout.databinding.FragmentMatchBinding
 import com.example.matchmotionlayout.ui.utils.NestedMotionLayoutListener
 import com.example.matchmotionlayout.ui.utils.dpToPx
 import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
+import com.example.matchmotionlayout.ui.viewmodel.MatchViewModel
 
-class PeriodMatchFragment : Fragment() {
+class OverallMatchFragment : Fragment() {
 
     private var viewBinding: FragmentMatchBinding? = null
 
@@ -39,7 +40,7 @@ class PeriodMatchFragment : Fragment() {
             NestedMotionLayoutListener(this).setup()
             rootContainer.setTransition(R.id.match_transition_overall)
             (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
-            guidelineHeaderBottom.setGuidelineBegin(100.dpToPx.toInt())
+            guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
         }
     }
 
