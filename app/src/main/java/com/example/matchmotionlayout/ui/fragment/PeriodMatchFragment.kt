@@ -18,6 +18,8 @@ class PeriodMatchFragment : Fragment() {
 
     private var viewBinding: FragmentMatchBinding? = null
 
+    private var motionListener: NestedMotionLayoutListener? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,7 +39,9 @@ class PeriodMatchFragment : Fragment() {
         ).commit()
 
         viewBinding?.apply {
-            NestedMotionLayoutListener(this).setup()
+            motionListener = NestedMotionLayoutListener(viewLifecycleOwner, this).also { listener ->
+                listener.setup()
+            }
             rootContainer.setTransition(R.id.match_transition_overall)
             (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
             guidelineHeaderBottom.setGuidelineBegin(100.dpToPx.toInt())
@@ -46,6 +50,7 @@ class PeriodMatchFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        motionListener?.clear()
         viewBinding = null
     }
 }
