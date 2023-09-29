@@ -113,7 +113,6 @@
             motion:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             motion:layout_constraintHorizontal_bias=".5"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/top_info_banner"
             motion:layout_constraintTop_toTopOf="@id/match_score"
             motion:layout_constraintVertical_chainStyle="packed" />
 
@@ -133,8 +132,8 @@
             android:id="@id/first_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            motion:layout_constraintBottom_toBottomOf="@id/match_score"
+            android:layout_marginTop="4dp"
+            motion:layout_constraintBottom_toTopOf="@id/first_team_form"
             motion:layout_constraintEnd_toEndOf="@id/first_team_icon"
             motion:layout_constraintStart_toStartOf="@id/first_team_icon"
             motion:layout_constraintTop_toBottomOf="@id/first_team_icon" />
@@ -143,8 +142,8 @@
             android:id="@id/second_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            motion:layout_constraintBottom_toBottomOf="@id/match_score"
+            android:layout_marginTop="4dp"
+            motion:layout_constraintBottom_toTopOf="@id/second_team_form"
             motion:layout_constraintEnd_toEndOf="@id/second_team_icon"
             motion:layout_constraintStart_toStartOf="@id/second_team_icon"
             motion:layout_constraintTop_toBottomOf="@id/second_team_icon" />
@@ -171,7 +170,8 @@
             motion:layout_constraintEnd_toStartOf="@id/match_score"
             motion:layout_constraintHorizontal_bias="1"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="parent" />
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_chainStyle="packed" />
 
         <Constraint
             android:id="@id/second_team_icon"
@@ -183,13 +183,14 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintHorizontal_bias="0"
             motion:layout_constraintStart_toEndOf="@id/match_score"
-            motion:layout_constraintTop_toTopOf="parent" />
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_chainStyle="packed" />
 
         <Constraint
             android:id="@id/first_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="4dp"
             motion:layout_constraintBottom_toBottomOf="@id/first_team_icon"
             motion:layout_constraintEnd_toStartOf="@id/first_team_icon"
             motion:layout_constraintTop_toTopOf="@id/first_team_icon" />
@@ -198,7 +199,7 @@
             android:id="@id/second_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="4dp"
             motion:layout_constraintBottom_toBottomOf="@id/second_team_icon"
             motion:layout_constraintStart_toEndOf="@id/second_team_icon"
             motion:layout_constraintTop_toTopOf="@id/second_team_icon" />

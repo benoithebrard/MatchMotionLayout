@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="110dp" />
+            app:layout_constraintGuide_begin="94dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_middle_horizontal"
@@ -62,13 +62,13 @@
         <TextView
             android:id="@+id/first_team_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="sans-serif-black"
             android:text="Team Cookie Wookie Hairy"
             android:textColor="@color/purple_200"
             android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="@id/match_score"
+            app:layout_constraintBottom_toTopOf="@id/first_team_form"
             app:layout_constraintEnd_toEndOf="@id/first_team_icon"
             app:layout_constraintStart_toStartOf="@id/first_team_icon"
             app:layout_constraintTop_toBottomOf="@id/first_team_icon" />
@@ -76,13 +76,13 @@
         <TextView
             android:id="@+id/second_team_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="sans-serif-black"
             android:text="Team Hive Honey Bzzz"
             android:textColor="@color/purple_200"
             android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="@id/match_score"
+            app:layout_constraintBottom_toTopOf="@id/second_team_form"
             app:layout_constraintEnd_toEndOf="@id/second_team_icon"
             app:layout_constraintStart_toStartOf="@id/second_team_icon"
             app:layout_constraintTop_toBottomOf="@id/second_team_icon" />
@@ -93,6 +93,7 @@
             android:layout_height="6dp"
             android:layout_marginTop="8dp"
             android:background="@color/no_man_sky_300"
+            app:layout_constraintBottom_toBottomOf="@id/match_score"
             app:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/first_team_name" />
@@ -103,6 +104,7 @@
             android:layout_height="6dp"
             android:layout_marginTop="8dp"
             android:background="@color/no_man_sky_200"
+            app:layout_constraintBottom_toBottomOf="@id/match_score"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
             app:layout_constraintTop_toBottomOf="@id/second_team_name" />

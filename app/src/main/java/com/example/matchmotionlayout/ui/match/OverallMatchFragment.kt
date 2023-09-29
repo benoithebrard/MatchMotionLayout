@@ -39,7 +39,7 @@ class OverallMatchFragment : Fragment() {
             NestedMotionLayoutListener(this).setup()
             rootContainer.setTransition(R.id.match_transition_overall)
             (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
-            guidelineHeaderBottom.setGuidelineBegin(150.dpToPx.toInt())
+            guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
         }
     }
 

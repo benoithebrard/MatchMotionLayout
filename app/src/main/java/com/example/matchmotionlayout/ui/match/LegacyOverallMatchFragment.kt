@@ -40,6 +40,7 @@ class LegacyOverallMatchFragment : Fragment() {
             rootContainer.setTransition(R.id.match_transition_overall_legacy)
             (overallScoreboardContainer.children.first() as MotionLayout)
                 .setTransition(R.id.scoreboard_transition_overall_legacy)
+            guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
         }
     }
 
