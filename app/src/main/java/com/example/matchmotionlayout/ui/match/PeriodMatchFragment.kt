@@ -13,7 +13,7 @@ import com.example.matchmotionlayout.ui.utils.NestedMotionLayoutListener
 import com.example.matchmotionlayout.ui.utils.dpToPx
 import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
 
-class LegacyOverallMatchFragment : Fragment() {
+class PeriodMatchFragment : Fragment() {
 
     private var viewBinding: FragmentMatchBinding? = null
 
@@ -37,10 +37,9 @@ class LegacyOverallMatchFragment : Fragment() {
 
         viewBinding?.apply {
             NestedMotionLayoutListener(this).setup()
-            rootContainer.setTransition(R.id.match_transition_overall_legacy)
-            (overallScoreboardContainer.children.first() as MotionLayout)
-                .setTransition(R.id.scoreboard_transition_overall_legacy)
-            guidelineHeaderBottom.setGuidelineBegin(90.dpToPx.toInt())
+            rootContainer.setTransition(R.id.match_transition_overall)
+            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
+            guidelineHeaderBottom.setGuidelineBegin(100.dpToPx.toInt())
         }
     }
 

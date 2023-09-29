@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_tennis"
-        android:name="com.example.matchmotionlayout.ui.match.LegacyOverallMatchFragment"
+        android:name="com.example.matchmotionlayout.ui.match.PeriodMatchFragment"
         android:label="@string/title_tennis"
         tools:layout="@layout/fragment_match" />
 
     <fragment
         android:id="@+id/navigation_team"
-        android:name="com.example.matchmotionlayout.ui.match.OverallMatchFragment"
+        android:name="com.example.matchmotionlayout.ui.match.LegacyOverallMatchFragment"
         android:label="@string/title_team"
         tools:layout="@layout/fragment_match" />
 </navigation>
