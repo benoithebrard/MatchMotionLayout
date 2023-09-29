@@ -18,6 +18,8 @@ class OverallMatchFragment : Fragment() {
 
     private var viewBinding: FragmentMatchBinding? = null
 
+    private var motionListener: NestedMotionLayoutListener? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,7 +39,8 @@ class OverallMatchFragment : Fragment() {
         ).commit()
 
         viewBinding?.apply {
-            NestedMotionLayoutListener(this).setup()
+            motionListener = NestedMotionLayoutListener(this)
+            motionListener?.setup()
             rootContainer.setTransition(R.id.match_transition_overall)
             (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
             guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
@@ -46,6 +49,7 @@ class OverallMatchFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        motionListener?.clear()
         viewBinding = null
     }
 }

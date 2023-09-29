@@ -9,6 +9,7 @@
         motion:motionInterpolator="easeInOut">
 
         <OnSwipe
+            motion:autoCompleteMode="continuousVelocity"
             motion:dragDirection="dragUp"
             motion:dragScale="1"
             motion:moveWhenScrollAtTop="true"
