@@ -72,8 +72,8 @@
             android:textColor="@color/purple_200"
             android:textSize="11sp"
             app:layout_constraintBottom_toTopOf="@id/first_team_form"
-            app:layout_constraintEnd_toEndOf="@id/first_team_icon"
-            app:layout_constraintStart_toStartOf="@id/first_team_icon"
+            app:layout_constraintEnd_toStartOf="@id/match_score"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/first_team_icon" />
 
         <TextView
@@ -85,8 +85,8 @@
             android:textColor="@color/purple_200"
             android:textSize="11sp"
             app:layout_constraintBottom_toTopOf="@id/second_team_form"
-            app:layout_constraintEnd_toEndOf="@id/second_team_icon"
-            app:layout_constraintStart_toStartOf="@id/second_team_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/match_score"
             app:layout_constraintTop_toBottomOf="@id/second_team_icon" />
 
         <View

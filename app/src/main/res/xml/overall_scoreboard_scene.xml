@@ -122,6 +122,24 @@
             android:layout_height="wrap_content"
             motion:layout_constraintGuide_begin="56dp" />
 
+        <Constraint
+            android:id="@id/first_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            motion:layout_constraintBottom_toTopOf="@id/first_team_form"
+            motion:layout_constraintEnd_toStartOf="@id/match_score"
+            motion:layout_constraintTop_toTopOf="@id/match_score" />
+
+        <Constraint
+            android:id="@id/second_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            motion:layout_constraintBottom_toTopOf="@id/second_team_form"
+            motion:layout_constraintStart_toEndOf="@id/match_score"
+            motion:layout_constraintTop_toTopOf="@id/match_score" />
+
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/start_overall">
