@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.motion.widget.MotionLayout
-import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.R
 import com.example.matchmotionlayout.databinding.FragmentMatchBinding
@@ -39,13 +37,8 @@ class LegacyOverallMatchFragment : Fragment() {
         ).commit()
 
         viewBinding?.apply {
-            motionListener = NestedMotionLayoutListener(viewLifecycleOwner, this).also { listener ->
-                listener.setup()
-            }
             rootContainer.setTransition(R.id.match_transition_overall_legacy)
-            (overallScoreboardContainer.children.first() as MotionLayout)
-                .setTransition(R.id.scoreboard_transition_overall_legacy)
-            guidelineHeaderBottom.setGuidelineBegin(90.dpToPx.toInt())
+            guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
         }
     }
 

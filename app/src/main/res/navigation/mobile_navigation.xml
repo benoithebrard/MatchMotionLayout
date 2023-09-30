@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_football"
-        android:name="com.example.matchmotionlayout.ui.fragment.OverallMatchFragment"
+        android:name="com.example.matchmotionlayout.ui.fragment.LegacyOverallMatchFragment"
         android:label="@string/title_football"
         tools:layout="@layout/fragment_match" />
 
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_team"
-        android:name="com.example.matchmotionlayout.ui.fragment.LegacyOverallMatchFragment"
+        android:name="com.example.matchmotionlayout.ui.fragment.OverallMatchFragment"
         android:label="@string/title_team"
         tools:layout="@layout/fragment_match" />
 </navigation>
