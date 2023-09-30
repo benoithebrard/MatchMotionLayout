@@ -30,9 +30,16 @@
             android:layout_height="32dp"
             android:background="@color/no_man_grey_500"
             android:elevation="1dp"
-            app:layout_constraintBottom_toTopOf="@id/overall_scoreboard_container"
+            app:layout_constraintBottom_toTopOf="@id/barrier_top_scoreboard"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_top_scoreboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="overall_scoreboard_container, overall_legacy_scoreboard" />
 
         <FrameLayout
             android:id="@+id/overall_scoreboard_container"
@@ -48,6 +55,54 @@
                 app:viewModel="@{viewModel}" />
 
         </FrameLayout>
+
+        <TextView
+            android:id="@+id/overall_legacy_scoreboard"
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:background="@android:color/holo_orange_light"
+            android:elevation="1dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Legacy scoreboard"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintTop_toBottomOf="@id/top_info_banner" />
+
+        <!-- <FrameLayout
+             android:id="@+id/scoreboard_container"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:elevation="1dp"
+             android:visibility="gone"
+             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+             app:layout_constraintTop_toBottomOf="@id/top_info_banner">
+             &lt;!&ndash;
+                         <FrameLayout
+                             android:id="@+id/overall_scoreboard_container"
+                             android:layout_width="match_parent"
+                             android:layout_height="0dp"
+                             android:elevation="1dp"
+                             android:background="@color/no_man_grey_100">
+
+                             <include
+                                 layout="@layout/item_scoreboard_overall_score"
+                                 app:viewModel="@{viewModel}" />
+
+                         </FrameLayout>&ndash;&gt;
+
+             <TextView
+                 android:id="@+id/overall_legacy_scoreboard"
+                 android:layout_width="match_parent"
+                 android:layout_height="114dp"
+                 android:background="@android:color/holo_orange_light"
+                 android:fontFamily="sans-serif"
+                 android:gravity="center"
+                 android:text="Legacy scoreboard"
+                 android:textSize="16sp"
+                 android:visibility="gone" />
+         </FrameLayout>-->
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_header_bottom"
@@ -79,6 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@color/no_man_grey_700"
+            android:elevation="2dp"
             app:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
             app:layout_constraintTop_toBottomOf="@id/streaming_player" />
 
@@ -87,6 +143,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/purple_200"
+            android:elevation="2dp"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:text="Dummies"
@@ -102,6 +159,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@color/teal_200"
+            android:elevation="2dp"
             app:layout_constraintBottom_toTopOf="@id/scrollable_content"
             app:layout_constraintTop_toBottomOf="@id/primary_tab_layout" />
 
@@ -109,6 +167,7 @@
             android:id="@+id/scrollable_content"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:elevation="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/secondary_tab_layout" />
 
