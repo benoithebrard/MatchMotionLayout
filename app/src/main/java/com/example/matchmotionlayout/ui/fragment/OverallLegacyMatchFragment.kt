@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.R
 import com.example.matchmotionlayout.databinding.FragmentMatchBinding
 import com.example.matchmotionlayout.ui.utils.NestedMotionLayoutListener
+import com.example.matchmotionlayout.ui.utils.dpToPx
 import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
 import com.example.matchmotionlayout.ui.viewmodel.MatchViewModel
 
@@ -38,6 +39,7 @@ class OverallLegacyMatchFragment : Fragment() {
 
         viewBinding?.apply {
             rootContainer.setTransition(R.id.match_transition_overall_legacy)
+            guidelineHeaderBottom.setGuidelineBegin(200.dpToPx.toInt())
             overallScoreboardContainer.isVisible = false
             overallLegacyScoreboard.isVisible = true
             streamingPlayer.isVisible = false

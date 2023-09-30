@@ -41,12 +41,18 @@ class OverallNoIconMatchFragment : Fragment() {
         ).commit()
 
         viewBinding?.apply {
-            motionListener = NestedMotionLayoutListener(viewLifecycleOwner, this).also { listener ->
+            val overallScoreboardMotionLayout =
+                overallScoreboardContainer.children.first() as MotionLayout
+            motionListener = NestedMotionLayoutListener(
+                lifecycleOwner = viewLifecycleOwner,
+                rootMotionLayout = rootContainer,
+                firstNestedMotionLayout = overallScoreboardMotionLayout
+            ).also { listener ->
                 listener.setup()
             }
             rootContainer.setTransition(R.id.match_transition_overall)
-            (overallScoreboardContainer.children.first() as MotionLayout)
-                .setTransition(R.id.scoreboard_transition_overall_no_icon)
+            overallScoreboardMotionLayout.setTransition(R.id.scoreboard_transition_overall_no_icon)
+
             rootContainer.findViewById<ImageView>(R.id.first_team_icon).isVisible = false
             rootContainer.findViewById<ImageView>(R.id.second_team_icon).isVisible = false
             rootContainer.findViewById<ImageView>(R.id.first_team_form).isVisible = false

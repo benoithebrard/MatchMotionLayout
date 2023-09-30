@@ -1,33 +1,27 @@
 package com.example.matchmotionlayout.ui.utils
 
-import android.util.Log
 import androidx.constraintlayout.motion.widget.MotionLayout
-import androidx.core.view.children
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.matchmotionlayout.databinding.FragmentMatchBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class NestedMotionLayoutListener(
     private val lifecycleOwner: LifecycleOwner,
-    private val viewBinding: FragmentMatchBinding
+    private val rootMotionLayout: MotionLayout,
+    private val firstNestedMotionLayout: MotionLayout? = null
 ) : MotionLayout.TransitionListener {
 
-    private var savedProgress: Float? = null
+    private var lastProgress: Float? = null
 
     override fun onTransitionStarted(
         motionLayout: MotionLayout?,
         startId: Int,
         endId: Int
     ) {
-        Log.d(
-            "NestedMotionLayout",
-            "--- onTransitionStarted"
-        )
-        updateNestedMotionLayout(motionLayout)
+        updateNestedMotionLayouts(motionLayout)
     }
 
     override fun onTransitionChange(
@@ -36,22 +30,14 @@ class NestedMotionLayoutListener(
         endId: Int,
         progress: Float
     ) {
-        Log.d(
-            "NestedMotionLayout",
-            "--- onTransitionChange"
-        )
-        updateNestedMotionLayout(motionLayout, progress)
+        updateNestedMotionLayouts(motionLayout, progress)
     }
 
     override fun onTransitionCompleted(
         motionLayout: MotionLayout?,
         currentId: Int
     ) {
-        Log.d(
-            "NestedMotionLayout",
-            "--- onTransitionCompleted"
-        )
-        updateNestedMotionLayout(motionLayout)
+        updateNestedMotionLayouts(motionLayout)
     }
 
     override fun onTransitionTrigger(
@@ -60,22 +46,12 @@ class NestedMotionLayoutListener(
         positive: Boolean,
         progress: Float
     ) {
-        Log.d(
-            "NestedMotionLayout",
-            "--- onTransitionTrigger"
-        )
-        updateNestedMotionLayout(motionLayout, progress)
+        updateNestedMotionLayouts(motionLayout, progress)
     }
 
     fun setup() {
-        Log.d(
-            "NestedMotionLayout",
-            "--- setup ---"
-        )
-        viewBinding.apply {
-            rootContainer.setTransitionListener(this@NestedMotionLayoutListener)
-            (overallScoreboardContainer.children.first() as MotionLayout).setTransitionListener(this@NestedMotionLayoutListener)
-        }
+        rootMotionLayout.setTransitionListener(this@NestedMotionLayoutListener)
+        firstNestedMotionLayout?.setTransitionListener(this@NestedMotionLayoutListener)
         autoSnapWorkaround()
     }
 
@@ -84,30 +60,16 @@ class NestedMotionLayoutListener(
             lifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 while (true) {
                     delay(500L)
-                    viewBinding.apply {
-                        Log.d(
-                            "NestedMotionLayout",
-                            "poll progress: ${rootContainer.progress}"
-                        )
-                        savedProgress?.let { progress ->
-                            when {
-                                rootContainer.progress == 0f && progress > 0 -> {
-                                    Log.d(
-                                        "NestedMotionLayout",
-                                        ">> transition to start"
-                                    )
-                                    rootContainer.progress = progress
-                                    rootContainer.transitionToStart()
-                                }
+                    lastProgress?.let { progress ->
+                        when {
+                            rootMotionLayout.progress == 0f && progress > 0 -> {
+                                rootMotionLayout.progress = progress
+                                rootMotionLayout.transitionToStart()
+                            }
 
-                                rootContainer.progress == 1f && progress < 1 -> {
-                                    Log.d(
-                                        "NestedMotionLayout",
-                                        ">> transition to end"
-                                    )
-                                    rootContainer.progress = progress
-                                    rootContainer.transitionToEnd()
-                                }
+                            rootMotionLayout.progress == 1f && progress < 1 -> {
+                                rootMotionLayout.progress = progress
+                                rootMotionLayout.transitionToEnd()
                             }
                         }
                     }
@@ -117,35 +79,20 @@ class NestedMotionLayoutListener(
     }
 
     fun clear() {
-        Log.d(
-            "NestedMotionLayout",
-            "--- clear ---"
-        )
-        viewBinding.apply {
-            rootContainer.removeTransitionListener(this@NestedMotionLayoutListener)
-            (overallScoreboardContainer.children.first() as MotionLayout).removeTransitionListener(
-                this@NestedMotionLayoutListener
-            )
-        }
+        rootMotionLayout.removeTransitionListener(this@NestedMotionLayoutListener)
+        firstNestedMotionLayout?.removeTransitionListener(this@NestedMotionLayoutListener)
     }
 
-    private fun updateNestedMotionLayout(
+    private fun updateNestedMotionLayouts(
         motionLayout: MotionLayout?,
         progress: Float? = null
     ) {
-        Log.d(
-            "NestedMotionLayout",
-            "updated progress=$progress motion.progress=${motionLayout?.progress} motion.id=${motionLayout?.id}"
-        )
-        motionLayout?.let { layout ->
-            savedProgress = progress ?: layout.progress
-            savedProgress?.let { resolvedProgress ->
-                viewBinding.apply {
-                    if (layout.id == rootContainer.id) {
-                        (overallScoreboardContainer.children.first() as MotionLayout).progress =
-                            resolvedProgress
-                    }
-                }
+        if (motionLayout == null) return
+        lastProgress = progress ?: motionLayout.progress
+        lastProgress?.let {
+            if (motionLayout.id == rootMotionLayout.id) {
+                firstNestedMotionLayout?.progress = it
+                // forward progress to other nested views here
             }
         }
     }

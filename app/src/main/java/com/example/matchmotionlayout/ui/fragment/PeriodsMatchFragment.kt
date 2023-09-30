@@ -39,9 +39,9 @@ class PeriodsMatchFragment : Fragment() {
         ).commit()
 
         viewBinding?.apply {
-            motionListener = NestedMotionLayoutListener(viewLifecycleOwner, this).also { listener ->
+          /*  motionListener = NestedMotionLayoutListener(viewLifecycleOwner, this).also { listener ->
                 listener.setup()
-            }
+            }*/
             rootContainer.setTransition(R.id.match_transition_overall)
             (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
             guidelineHeaderBottom.setGuidelineBegin(100.dpToPx.toInt())
