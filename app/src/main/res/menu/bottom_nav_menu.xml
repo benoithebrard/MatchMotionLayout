@@ -2,18 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_football"
+        android:id="@+id/navigation_overall"
         android:icon="@drawable/cookie"
-        android:title="@string/title_football" />
+        android:title="overall" />
 
     <item
-        android:id="@+id/navigation_tennis"
-        android:icon="@drawable/hive"
-        android:title="@string/title_tennis" />
+        android:id="@+id/navigation_overall_no_icon"
+        android:icon="@drawable/cookie"
+        android:title="overall no icon" />
 
     <item
-        android:id="@+id/navigation_team"
+        android:id="@+id/navigation_overall_legacy"
         android:icon="@drawable/diamond"
-        android:title="@string/title_team" />
+        android:title="overall legacy" />
+
+    <item
+        android:id="@+id/navigation_periods"
+        android:icon="@drawable/hive"
+        android:title="periods" />
 
 </menu>

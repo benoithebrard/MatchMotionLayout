@@ -14,7 +14,7 @@ import com.example.matchmotionlayout.ui.utils.dpToPx
 import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
 import com.example.matchmotionlayout.ui.viewmodel.MatchViewModel
 
-class OverallMatchFragment : Fragment() {
+class OverallNoIconMatchFragment : Fragment() {
 
     private var viewBinding: FragmentMatchBinding? = null
 
@@ -43,7 +43,7 @@ class OverallMatchFragment : Fragment() {
                 listener.setup()
             }
             rootContainer.setTransition(R.id.match_transition_overall)
-            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
+            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall_no_icon)
             guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
         }
     }

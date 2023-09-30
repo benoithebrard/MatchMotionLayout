@@ -3,23 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_football">
+    app:startDestination="@+id/navigation_overall">
 
     <fragment
-        android:id="@+id/navigation_football"
+        android:id="@+id/navigation_overall"
         android:name="com.example.matchmotionlayout.ui.fragment.OverallMatchFragment"
         android:label="@string/title_football"
         tools:layout="@layout/fragment_match" />
 
     <fragment
-        android:id="@+id/navigation_tennis"
-        android:name="com.example.matchmotionlayout.ui.fragment.LegacyOverallMatchFragment"
-        android:label="@string/title_tennis"
+        android:id="@+id/navigation_overall_no_icon"
+        android:name="com.example.matchmotionlayout.ui.fragment.OverallNoIconMatchFragment"
+        android:label="@string/title_football"
         tools:layout="@layout/fragment_match" />
 
     <fragment
-        android:id="@+id/navigation_team"
-        android:name="com.example.matchmotionlayout.ui.fragment.PeriodMatchFragment"
+        android:id="@+id/navigation_overall_legacy"
+        android:name="com.example.matchmotionlayout.ui.fragment.OverallLegacyMatchFragment"
         android:label="@string/title_team"
         tools:layout="@layout/fragment_match" />
+
+    <fragment
+        android:id="@+id/navigation_periods"
+        android:name="com.example.matchmotionlayout.ui.fragment.PeriodsMatchFragment"
+        android:label="@string/title_tennis"
+        tools:layout="@layout/fragment_match" />
+
 </navigation>

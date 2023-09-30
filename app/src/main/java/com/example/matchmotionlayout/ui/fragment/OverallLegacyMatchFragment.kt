@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.children
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.R
 import com.example.matchmotionlayout.databinding.FragmentMatchBinding
@@ -15,7 +14,7 @@ import com.example.matchmotionlayout.ui.utils.dpToPx
 import com.example.matchmotionlayout.ui.vertical.VerticalContentFragment
 import com.example.matchmotionlayout.ui.viewmodel.MatchViewModel
 
-class PeriodMatchFragment : Fragment() {
+class OverallLegacyMatchFragment : Fragment() {
 
     private var viewBinding: FragmentMatchBinding? = null
 
@@ -40,12 +39,9 @@ class PeriodMatchFragment : Fragment() {
         ).commit()
 
         viewBinding?.apply {
-            motionListener = NestedMotionLayoutListener(viewLifecycleOwner, this).also { listener ->
-                listener.setup()
-            }
-            rootContainer.setTransition(R.id.match_transition_overall)
-            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
-            guidelineHeaderBottom.setGuidelineBegin(100.dpToPx.toInt())
+            rootContainer.setTransition(R.id.match_transition_overall_legacy)
+            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall_legacy)
+            guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
         }
     }
 
