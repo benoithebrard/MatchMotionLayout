@@ -5,7 +5,7 @@
     <Transition
         android:id="@+id/scoreboard_transition_overall"
         motion:constraintSetEnd="@+id/end_scoreboard_overall"
-        motion:constraintSetStart="@id/start_overall"
+        motion:constraintSetStart="@id/start_scoreboard_overall"
         motion:motionInterpolator="easeInOut" />
 
     <KeyFrameSet>
@@ -142,53 +142,7 @@
 
     </ConstraintSet>
 
-    <ConstraintSet android:id="@+id/start_overall">
-
-        <Constraint
-            android:id="@id/first_team_icon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:padding="2dp"
-            motion:layout_constraintBottom_toTopOf="@id/first_team_name"
-            motion:layout_constraintEnd_toStartOf="@id/guideline_middle_horizontal"
-            motion:layout_constraintHorizontal_bias=".5"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="@id/match_score"
-            motion:layout_constraintVertical_chainStyle="packed" />
-
-        <Constraint
-            android:id="@id/second_team_icon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:padding="2dp"
-            motion:layout_constraintBottom_toTopOf="@id/second_team_name"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintHorizontal_bias=".5"
-            motion:layout_constraintHorizontal_chainStyle="packed"
-            motion:layout_constraintStart_toEndOf="@id/guideline_middle_horizontal"
-            motion:layout_constraintTop_toTopOf="@id/match_score" />
-
-        <Constraint
-            android:id="@id/first_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            motion:layout_constraintBottom_toTopOf="@id/first_team_form"
-            motion:layout_constraintEnd_toEndOf="@id/first_team_icon"
-            motion:layout_constraintStart_toStartOf="@id/first_team_icon"
-            motion:layout_constraintTop_toBottomOf="@id/first_team_icon" />
-
-        <Constraint
-            android:id="@id/second_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            motion:layout_constraintBottom_toTopOf="@id/second_team_form"
-            motion:layout_constraintEnd_toEndOf="@id/second_team_icon"
-            motion:layout_constraintStart_toStartOf="@id/second_team_icon"
-            motion:layout_constraintTop_toBottomOf="@id/second_team_icon" />
-
-    </ConstraintSet>
+    <ConstraintSet android:id="@+id/start_scoreboard_overall" />
 
     <ConstraintSet android:id="@+id/end_scoreboard_overall">
 
