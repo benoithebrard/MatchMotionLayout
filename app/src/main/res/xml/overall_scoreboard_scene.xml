@@ -96,6 +96,16 @@
         </KeyAttribute>
     </KeyFrameSet>
 
+    <Transition
+        android:id="@+id/scoreboard_transition_legacy"
+        motion:constraintSetEnd="@+id/end_scoreboard_legacy"
+        motion:constraintSetStart="@id/start_scoreboard_legacy"
+        motion:motionInterpolator="easeInOut" />
+
+    <ConstraintSet android:id="@+id/start_scoreboard_legacy"/>
+
+    <ConstraintSet android:id="@+id/end_scoreboard_legacy"/>
+
     <ConstraintSet android:id="@+id/start">
 
         <Constraint
