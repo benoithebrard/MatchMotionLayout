@@ -45,8 +45,7 @@ class OverallNoIconMatchFragment : Fragment() {
                 overallScoreboardContainer.children.first() as MotionLayout
             motionListener = NestedMotionLayoutListener(
                 lifecycleOwner = viewLifecycleOwner,
-                rootMotionLayout = rootContainer,
-                firstNestedMotionLayout = overallScoreboardMotionLayout
+                rootLayout = rootContainer
             ).also { listener ->
                 listener.setup()
             }

@@ -1,6 +1,9 @@
 package com.example.matchmotionlayout.ui.utils
 
+import android.view.View
+import android.view.ViewGroup
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.core.view.children
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
@@ -10,11 +13,12 @@ import kotlinx.coroutines.launch
 
 class NestedMotionLayoutListener(
     private val lifecycleOwner: LifecycleOwner,
-    private val rootMotionLayout: MotionLayout,
-    private val firstNestedMotionLayout: MotionLayout? = null
+    private val rootLayout: MotionLayout
 ) : MotionLayout.TransitionListener {
 
     private var lastProgress: Float? = null
+
+    private var nestedMotionLayout: MotionLayout? = null
 
     override fun onTransitionStarted(
         motionLayout: MotionLayout?,
@@ -50,8 +54,9 @@ class NestedMotionLayoutListener(
     }
 
     fun setup() {
-        rootMotionLayout.setTransitionListener(this@NestedMotionLayoutListener)
-        firstNestedMotionLayout?.setTransitionListener(this@NestedMotionLayoutListener)
+        rootLayout.setTransitionListener(this@NestedMotionLayoutListener)
+        nestedMotionLayout = rootLayout.children.toList().findNestedMotionLayout()
+        nestedMotionLayout?.setTransitionListener(this@NestedMotionLayoutListener)
         autoSnapWorkaround()
     }
 
@@ -62,14 +67,14 @@ class NestedMotionLayoutListener(
                     delay(500L)
                     lastProgress?.let { progress ->
                         when {
-                            rootMotionLayout.progress == 0f && progress > 0 -> {
-                                rootMotionLayout.progress = progress
-                                rootMotionLayout.transitionToStart()
+                            rootLayout.progress == 0f && progress > 0 -> {
+                                rootLayout.progress = progress
+                                rootLayout.transitionToStart()
                             }
 
-                            rootMotionLayout.progress == 1f && progress < 1 -> {
-                                rootMotionLayout.progress = progress
-                                rootMotionLayout.transitionToEnd()
+                            rootLayout.progress == 1f && progress < 1 -> {
+                                rootLayout.progress = progress
+                                rootLayout.transitionToEnd()
                             }
                         }
                     }
@@ -79,8 +84,8 @@ class NestedMotionLayoutListener(
     }
 
     fun clear() {
-        rootMotionLayout.removeTransitionListener(this@NestedMotionLayoutListener)
-        firstNestedMotionLayout?.removeTransitionListener(this@NestedMotionLayoutListener)
+        rootLayout.removeTransitionListener(this@NestedMotionLayoutListener)
+        nestedMotionLayout?.removeTransitionListener(this@NestedMotionLayoutListener)
     }
 
     private fun updateNestedMotionLayouts(
@@ -90,10 +95,20 @@ class NestedMotionLayoutListener(
         if (motionLayout == null) return
         lastProgress = progress ?: motionLayout.progress
         lastProgress?.let {
-            if (motionLayout.id == rootMotionLayout.id) {
-                firstNestedMotionLayout?.progress = it
+            if (motionLayout.id == rootLayout.id) {
+                rootLayout.children.filterIsInstance<MotionLayout>().firstOrNull()?.progress =
+                    it
+                nestedMotionLayout?.progress = it
                 // forward progress to other nested views here
             }
         }
+    }
+
+    private tailrec fun List<View>.findNestedMotionLayout(): MotionLayout? {
+        forEach {
+            if (it is MotionLayout) return it
+            if (it is ViewGroup) return it.children.toList().findNestedMotionLayout()
+        }
+        return null
     }
 }
