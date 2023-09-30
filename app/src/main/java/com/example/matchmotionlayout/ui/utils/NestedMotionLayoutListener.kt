@@ -76,10 +76,10 @@ class NestedMotionLayoutListener(
             rootContainer.setTransitionListener(this@NestedMotionLayoutListener)
             (overallScoreboardContainer.children.first() as MotionLayout).setTransitionListener(this@NestedMotionLayoutListener)
         }
-        applyTransitionWorkaround()
+        autoSnapWorkaround()
     }
 
-    private fun applyTransitionWorkaround() {
+    private fun autoSnapWorkaround() {
         lifecycleOwner.lifecycleScope.launch {
             lifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 while (true) {
@@ -90,13 +90,24 @@ class NestedMotionLayoutListener(
                             "poll progress: ${rootContainer.progress}"
                         )
                         savedProgress?.let { progress ->
-                            if (rootContainer.progress == 0f && progress > 0) {
-                                Log.d(
-                                    "NestedMotionLayout",
-                                    ">> transition to start"
-                                )
-                                rootContainer.progress = progress
-                                rootContainer.transitionToStart()
+                            when {
+                                rootContainer.progress == 0f && progress > 0 -> {
+                                    Log.d(
+                                        "NestedMotionLayout",
+                                        ">> transition to start"
+                                    )
+                                    rootContainer.progress = progress
+                                    rootContainer.transitionToStart()
+                                }
+
+                                rootContainer.progress == 1f && progress < 1 -> {
+                                    Log.d(
+                                        "NestedMotionLayout",
+                                        ">> transition to end"
+                                    )
+                                    rootContainer.progress = progress
+                                    rootContainer.transitionToEnd()
+                                }
                             }
                         }
                     }
