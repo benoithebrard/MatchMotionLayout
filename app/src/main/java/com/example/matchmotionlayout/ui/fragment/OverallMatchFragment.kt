@@ -44,7 +44,7 @@ class OverallMatchFragment : Fragment() {
                 listener.setup()
             }
             rootContainer.setTransition(R.id.match_transition_overall)
-            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
+            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_no_icon)
             guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
         }
     }

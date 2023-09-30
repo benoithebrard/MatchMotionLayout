@@ -5,7 +5,7 @@
     <Transition
         android:id="@+id/scoreboard_transition_overall"
         motion:constraintSetEnd="@+id/end_scoreboard_overall"
-        motion:constraintSetStart="@id/start"
+        motion:constraintSetStart="@id/start_overall"
         motion:motionInterpolator="easeInOut" />
 
     <KeyFrameSet>
@@ -97,16 +97,34 @@
     </KeyFrameSet>
 
     <Transition
+        android:id="@+id/scoreboard_transition_no_icon"
+        motion:constraintSetEnd="@+id/end_scoreboard_no_icon"
+        motion:constraintSetStart="@id/start_scoreboard_no_icon"
+        motion:motionInterpolator="easeInOut" />
+
+    <Transition
         android:id="@+id/scoreboard_transition_legacy"
         motion:constraintSetEnd="@+id/end_scoreboard_legacy"
         motion:constraintSetStart="@id/start_scoreboard_legacy"
         motion:motionInterpolator="easeInOut" />
 
-    <ConstraintSet android:id="@+id/start_scoreboard_legacy"/>
+    <ConstraintSet android:id="@+id/start_scoreboard_legacy" />
 
-    <ConstraintSet android:id="@+id/end_scoreboard_legacy"/>
+    <ConstraintSet android:id="@+id/end_scoreboard_legacy" />
 
-    <ConstraintSet android:id="@+id/start">
+    <ConstraintSet android:id="@+id/start_scoreboard_no_icon" />
+
+    <ConstraintSet android:id="@+id/end_scoreboard_no_icon">
+
+        <Constraint
+            android:id="@+id/guideline_header_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintGuide_begin="56dp" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/start_overall">
 
         <Constraint
             android:id="@id/first_team_icon"
