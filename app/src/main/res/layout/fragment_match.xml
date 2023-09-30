@@ -59,7 +59,7 @@
         <TextView
             android:id="@+id/overall_legacy_scoreboard"
             android:layout_width="match_parent"
-            android:layout_height="114dp"
+            android:layout_height="0dp"
             android:background="@android:color/holo_orange_light"
             android:elevation="1dp"
             android:fontFamily="sans-serif"
