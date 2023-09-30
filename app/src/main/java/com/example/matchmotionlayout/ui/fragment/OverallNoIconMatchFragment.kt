@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.children
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.R
 import com.example.matchmotionlayout.databinding.FragmentMatchBinding
@@ -43,7 +45,12 @@ class OverallNoIconMatchFragment : Fragment() {
                 listener.setup()
             }
             rootContainer.setTransition(R.id.match_transition_overall)
-            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall_no_icon)
+            (overallScoreboardContainer.children.first() as MotionLayout)
+                .setTransition(R.id.scoreboard_transition_overall_no_icon)
+            rootContainer.findViewById<ImageView>(R.id.first_team_icon).isVisible = false
+            rootContainer.findViewById<ImageView>(R.id.second_team_icon).isVisible = false
+            rootContainer.findViewById<ImageView>(R.id.first_team_form).isVisible = false
+            rootContainer.findViewById<ImageView>(R.id.second_team_form).isVisible = false
             guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
         }
     }
