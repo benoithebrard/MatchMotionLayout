@@ -18,7 +18,8 @@ class NestedMotionLayoutListener(
 
     private var lastProgress: Float? = null
 
-    private var nestedMotionLayout: MotionLayout? = null
+    private var nestedMotionLayouts: List<MotionLayout> =
+        rootLayout.children.toList().findNestedMotionLayouts()
 
     override fun onTransitionStarted(
         motionLayout: MotionLayout?,
@@ -55,8 +56,7 @@ class NestedMotionLayoutListener(
 
     fun setup() {
         rootLayout.setTransitionListener(this@NestedMotionLayoutListener)
-        nestedMotionLayout = rootLayout.children.toList().findNestedMotionLayout()
-        nestedMotionLayout?.setTransitionListener(this@NestedMotionLayoutListener)
+        nestedMotionLayouts.forEach { it.setTransitionListener(this@NestedMotionLayoutListener) }
         autoSnapWorkaround()
     }
 
@@ -85,7 +85,7 @@ class NestedMotionLayoutListener(
 
     fun clear() {
         rootLayout.removeTransitionListener(this@NestedMotionLayoutListener)
-        nestedMotionLayout?.removeTransitionListener(this@NestedMotionLayoutListener)
+        nestedMotionLayouts.firstOrNull()?.removeTransitionListener(this@NestedMotionLayoutListener)
     }
 
     private fun updateNestedMotionLayouts(
@@ -93,22 +93,30 @@ class NestedMotionLayoutListener(
         progress: Float? = null
     ) {
         if (motionLayout == null) return
+
         lastProgress = progress ?: motionLayout.progress
-        lastProgress?.let {
+
+        lastProgress?.let { motionProgress ->
             if (motionLayout.id == rootLayout.id) {
                 rootLayout.children.filterIsInstance<MotionLayout>().firstOrNull()?.progress =
-                    it
-                nestedMotionLayout?.progress = it
-                // forward progress to other nested views here
+                    motionProgress
+                nestedMotionLayouts.forEach { it.progress = motionProgress }
             }
         }
     }
 
-    private tailrec fun List<View>.findNestedMotionLayout(): MotionLayout? {
-        forEach {
-            if (it is MotionLayout) return it
-            if (it is ViewGroup) return it.children.toList().findNestedMotionLayout()
+    private fun List<View>.findNestedMotionLayouts(): List<MotionLayout> =
+        fold(emptyList()) { motionLayouts, view ->
+            when (view) {
+                is MotionLayout -> {
+                    motionLayouts + view
+                }
+
+                is ViewGroup -> {
+                    motionLayouts + view.children.toList().findNestedMotionLayouts()
+                }
+
+                else -> motionLayouts
+            }
         }
-        return null
-    }
 }
