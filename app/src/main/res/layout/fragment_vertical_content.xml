@@ -10,12 +10,29 @@
 
     </data>
 
-    <androidx.recyclerview.widget.RecyclerView xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/vertical_content"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:adapter="@{viewModel.adapter}"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/dummy_list_item" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/secondary_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/teal_200"
+            android:elevation="2dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Secondary"
+            android:textSize="14sp" />
+
+        <androidx.recyclerview.widget.RecyclerView xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/vertical_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:adapter="@{viewModel.adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/dummy_list_item" />
+    </LinearLayout>
 
 </layout>

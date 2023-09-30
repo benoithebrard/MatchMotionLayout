@@ -70,40 +70,6 @@
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintTop_toBottomOf="@id/top_info_banner" />
 
-        <!-- <FrameLayout
-             android:id="@+id/scoreboard_container"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:elevation="1dp"
-             android:visibility="gone"
-             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
-             app:layout_constraintTop_toBottomOf="@id/top_info_banner">
-             &lt;!&ndash;
-                         <FrameLayout
-                             android:id="@+id/overall_scoreboard_container"
-                             android:layout_width="match_parent"
-                             android:layout_height="0dp"
-                             android:elevation="1dp"
-                             android:background="@color/no_man_grey_100">
-
-                             <include
-                                 layout="@layout/item_scoreboard_overall_score"
-                                 app:viewModel="@{viewModel}" />
-
-                         </FrameLayout>&ndash;&gt;
-
-             <TextView
-                 android:id="@+id/overall_legacy_scoreboard"
-                 android:layout_width="match_parent"
-                 android:layout_height="114dp"
-                 android:background="@android:color/holo_orange_light"
-                 android:fontFamily="sans-serif"
-                 android:gravity="center"
-                 android:text="Legacy scoreboard"
-                 android:textSize="16sp"
-                 android:visibility="gone" />
-         </FrameLayout>-->
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_header_bottom"
             android:layout_width="wrap_content"
@@ -146,7 +112,7 @@
             android:elevation="2dp"
             android:fontFamily="sans-serif"
             android:gravity="center"
-            android:text="Dummies"
+            android:text="Primary"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/primary_tab_layout"
@@ -154,22 +120,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/primary_tab_layout" />
 
-        <View
-            android:id="@+id/secondary_tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@color/teal_200"
-            android:elevation="2dp"
-            app:layout_constraintBottom_toTopOf="@id/scrollable_content"
-            app:layout_constraintTop_toBottomOf="@id/primary_tab_layout" />
-
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/scrollable_content"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:elevation="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/secondary_tab_layout" />
+            app:layout_constraintTop_toBottomOf="@id/primary_tab_layout" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>
