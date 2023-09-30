@@ -57,6 +57,7 @@ class OverallNoIconMatchFragment : Fragment() {
             rootContainer.findViewById<ImageView>(R.id.second_team_icon).isVisible = false
             rootContainer.findViewById<ImageView>(R.id.first_team_form).isVisible = false
             rootContainer.findViewById<ImageView>(R.id.second_team_form).isVisible = false
+            rootContainer.findViewById<ImageView>(R.id.extra_time).isVisible = true
             guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())
         }
     }

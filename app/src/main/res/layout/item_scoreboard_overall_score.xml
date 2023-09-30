@@ -96,7 +96,7 @@
             android:layout_marginTop="8dp"
             android:background="@color/no_man_sky_300"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@id/match_score"
+            app:layout_constraintBottom_toBottomOf="@id/extra_time"
             app:layout_constraintEnd_toStartOf="@id/match_score"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/first_team_name" />
@@ -108,7 +108,7 @@
             android:layout_marginTop="8dp"
             android:background="@color/no_man_sky_200"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@id/match_score"
+            app:layout_constraintBottom_toBottomOf="@id/extra_time"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/match_score"
             app:layout_constraintTop_toBottomOf="@id/second_team_name" />
@@ -124,10 +124,25 @@
             android:minHeight="32dp"
             android:text="1 - 2"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintBottom_toTopOf="@id/extra_time"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/extra_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:text="(wait for it)"
+            android:textColor="@color/no_man_grey_300"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintEnd_toEndOf="@id/match_score"
+            app:layout_constraintStart_toStartOf="@id/match_score"
+            app:layout_constraintTop_toBottomOf="@id/match_score" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>
