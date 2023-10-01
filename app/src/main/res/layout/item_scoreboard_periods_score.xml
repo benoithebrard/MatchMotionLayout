@@ -117,9 +117,11 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/period_scores"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:nestedScrollingEnabled="false"
             android:orientation="horizontal"
+            android:overScrollMode="never"
             app:adapter="@{viewModel.horizontalAdapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/guideline_periods_header_bottom"

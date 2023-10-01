@@ -20,7 +20,7 @@ class MockHorizontalRecyclerAdapter :
     }
 
     override fun getItemCount(): Int {
-        return 50
+        return 7
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = Unit
