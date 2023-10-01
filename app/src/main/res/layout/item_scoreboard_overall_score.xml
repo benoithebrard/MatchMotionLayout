@@ -18,7 +18,7 @@
         app:layoutDescription="@xml/overall_scoreboard_scene">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_header_bottom"
+            android:id="@+id/guideline_overall_header_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -139,7 +139,7 @@
             android:text="(wait for it)"
             android:textColor="@color/no_man_grey_300"
             android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintBottom_toTopOf="@id/guideline_overall_header_bottom"
             app:layout_constraintEnd_toEndOf="@id/match_score"
             app:layout_constraintStart_toStartOf="@id/match_score"
             app:layout_constraintTop_toBottomOf="@id/match_score" />

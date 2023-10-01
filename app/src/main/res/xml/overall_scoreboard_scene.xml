@@ -165,7 +165,7 @@
     <ConstraintSet android:id="@+id/end_scoreboard_no_icon">
 
         <Constraint
-            android:id="@id/guideline_header_bottom"
+            android:id="@id/guideline_overall_header_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintGuide_begin="56dp" />
@@ -192,7 +192,7 @@
             android:id="@id/match_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            motion:layout_constraintBottom_toTopOf="@id/guideline_overall_header_bottom"
             motion:layout_constraintTop_toTopOf="parent" />
 
     </ConstraintSet>
@@ -202,7 +202,7 @@
     <ConstraintSet android:id="@+id/end_scoreboard_overall">
 
         <Constraint
-            android:id="@id/guideline_header_bottom"
+            android:id="@id/guideline_overall_header_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintGuide_begin="56dp" />
@@ -213,7 +213,7 @@
             android:layout_height="20dp"
             android:layout_marginEnd="12dp"
             android:padding="1dp"
-            motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            motion:layout_constraintBottom_toTopOf="@id/guideline_overall_header_bottom"
             motion:layout_constraintEnd_toStartOf="@id/match_score"
             motion:layout_constraintHorizontal_bias="1"
             motion:layout_constraintStart_toStartOf="parent"
@@ -226,7 +226,7 @@
             android:layout_height="20dp"
             android:layout_marginStart="12dp"
             android:padding="1dp"
-            motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            motion:layout_constraintBottom_toTopOf="@id/guideline_overall_header_bottom"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintHorizontal_bias="0"
             motion:layout_constraintStart_toEndOf="@id/match_score"
@@ -255,7 +255,7 @@
             android:id="@id/match_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            motion:layout_constraintBottom_toTopOf="@id/guideline_overall_header_bottom"
             motion:layout_constraintTop_toTopOf="parent" />
 
     </ConstraintSet>

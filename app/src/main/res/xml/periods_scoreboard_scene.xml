@@ -31,64 +31,10 @@
     <ConstraintSet android:id="@id/end_scoreboard_periods">
 
         <Constraint
-            android:id="@id/guideline_header_bottom"
+            android:id="@id/guideline_periods_header_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintGuide_begin="76dp" />
-
-        <Constraint
-            android:id="@id/first_team_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="9dp"
-            motion:layout_constraintBottom_toTopOf="@id/second_team_name"
-            motion:layout_constraintEnd_toStartOf="@id/period_scores"
-            motion:layout_constraintStart_toEndOf="@id/first_team_icon"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintVertical_bias="1"
-            motion:layout_constraintVertical_chainStyle="packed" />
-
-        <Constraint
-            android:id="@id/second_team_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
-            motion:layout_constraintBottom_toTopOf="@id/first_team_name"
-            motion:layout_constraintEnd_toStartOf="@id/period_scores"
-            motion:layout_constraintStart_toEndOf="@id/second_team_icon"
-            motion:layout_constraintTop_toBottomOf="@id/first_team_name"
-            motion:layout_constraintVertical_bias="0" />
-
-        <Constraint
-            android:id="@id/first_team_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="4dp"
-            android:padding="2dp"
-            motion:layout_constraintBottom_toTopOf="@id/second_team_icon"
-            motion:layout_constraintEnd_toStartOf="@id/first_team_name"
-            motion:layout_constraintHorizontal_bias="0"
-            motion:layout_constraintHorizontal_chainStyle="packed"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintVertical_bias="1"
-            motion:layout_constraintVertical_chainStyle="packed" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@id/second_team_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            android:padding="2dp"
-            motion:layout_constraintBottom_toTopOf="@id/first_team_icon"
-            motion:layout_constraintEnd_toStartOf="@id/second_team_name"
-            motion:layout_constraintHorizontal_bias="0"
-            motion:layout_constraintHorizontal_chainStyle="packed"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/middle_team_separator"
-            motion:layout_constraintVertical_bias="0" />
 
     </ConstraintSet>
 
