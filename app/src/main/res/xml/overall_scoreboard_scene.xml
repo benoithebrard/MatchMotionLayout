@@ -165,7 +165,7 @@
     <ConstraintSet android:id="@+id/end_scoreboard_no_icon">
 
         <Constraint
-            android:id="@+id/guideline_header_bottom"
+            android:id="@id/guideline_header_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintGuide_begin="56dp" />
@@ -202,7 +202,7 @@
     <ConstraintSet android:id="@+id/end_scoreboard_overall">
 
         <Constraint
-            android:id="@+id/guideline_header_bottom"
+            android:id="@id/guideline_header_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintGuide_begin="56dp" />

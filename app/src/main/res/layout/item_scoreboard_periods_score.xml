@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:background="@color/no_man_sky_500"
         android:paddingHorizontal="16dp"
-        app:layoutDescription="@xml/item_scoreboard_periods_score_scene">
+        app:layoutDescription="@xml/periods_scoreboard_scene">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_header_bottom"
