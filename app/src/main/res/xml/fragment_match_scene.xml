@@ -3,9 +3,25 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
+        android:id="@+id/match_transition_periods"
+        motion:constraintSetEnd="@+id/end_periods"
+        motion:constraintSetStart="@id/start_periods"
+        motion:motionInterpolator="easeInOut">
+
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:dragScale="1"
+            motion:moveWhenScrollAtTop="true"
+            motion:onTouchUp="autoComplete"
+            motion:touchAnchorId="@id/scrollable_content"
+            motion:touchAnchorSide="top" />
+
+    </Transition>
+
+    <Transition
         android:id="@+id/match_transition_overall"
         motion:constraintSetEnd="@+id/end_overall"
-        motion:constraintSetStart="@id/start"
+        motion:constraintSetStart="@id/start_overall"
         motion:motionInterpolator="easeInOut">
 
         <OnSwipe
@@ -21,7 +37,7 @@
     <Transition
         android:id="@+id/match_transition_overall_legacy"
         motion:constraintSetEnd="@+id/end_legacy"
-        motion:constraintSetStart="@id/start"
+        motion:constraintSetStart="@id/start_overall_legacy"
         motion:motionInterpolator="easeInOut">
 
         <OnSwipe
@@ -34,23 +50,9 @@
 
     </Transition>
 
-    <Transition
-        android:id="@+id/match_transition_periods"
-        motion:constraintSetEnd="@+id/end_periods"
-        motion:constraintSetStart="@id/start"
-        motion:motionInterpolator="easeInOut">
-
-        <OnSwipe
-            motion:dragDirection="dragUp"
-            motion:dragScale="1"
-            motion:moveWhenScrollAtTop="true"
-            motion:onTouchUp="autoComplete"
-            motion:touchAnchorId="@id/scrollable_content"
-            motion:touchAnchorSide="top" />
-
-    </Transition>
-
-    <ConstraintSet android:id="@+id/start" />
+    <ConstraintSet android:id="@+id/start_periods" />
+    <ConstraintSet android:id="@+id/start_overall" />
+    <ConstraintSet android:id="@+id/start_overall_legacy" />
 
     <ConstraintSet android:id="@+id/end_legacy">
 
