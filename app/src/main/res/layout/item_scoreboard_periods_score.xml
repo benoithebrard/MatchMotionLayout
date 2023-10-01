@@ -30,14 +30,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="30dp" />
+            app:layout_constraintGuide_begin="28dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_second_team"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="70dp" />
+            app:layout_constraintGuide_begin="72dp" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/first_team_icon"

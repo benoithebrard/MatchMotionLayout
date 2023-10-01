@@ -34,13 +34,13 @@
             android:id="@id/guideline_first_team"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintGuide_begin="20dp" />
+            motion:layout_constraintGuide_begin="24dp" />
 
         <Constraint
             android:id="@id/guideline_second_team"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintGuide_begin="50dp" />
+            motion:layout_constraintGuide_begin="52dp" />
 
         <Constraint
             android:id="@id/guideline_periods_header_bottom"
