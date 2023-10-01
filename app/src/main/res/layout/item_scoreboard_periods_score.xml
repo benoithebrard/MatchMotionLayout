@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.matchmotionlayout.ui.viewmodel.MatchViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/overall_scoreboard_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/no_man_sky_500"
+        app:layoutDescription="@xml/overall_scoreboard_scene">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_header_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="94dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_middle_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/first_team_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/icon_background"
+            android:padding="2dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/first_team_name"
+            app:layout_constraintEnd_toStartOf="@id/match_score"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/match_score"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/cookie"
+            app:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/second_team_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/icon_background"
+            android:padding="2dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/second_team_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/match_score"
+            app:layout_constraintTop_toTopOf="@id/match_score"
+            app:srcCompat="@drawable/hive"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/first_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="12dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Team Cookie Wookie Hairy"
+            android:textColor="@color/purple_200"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toTopOf="@id/first_team_form"
+            app:layout_constraintEnd_toStartOf="@id/match_score"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/first_team_icon" />
+
+        <TextView
+            android:id="@+id/second_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="12dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Team Hive Honey Bzzz"
+            android:textColor="@color/purple_200"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toTopOf="@id/second_team_form"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/match_score"
+            app:layout_constraintTop_toBottomOf="@id/second_team_icon" />
+
+        <View
+            android:id="@+id/first_team_form"
+            android:layout_width="40dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/no_man_sky_300"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/extra_time"
+            app:layout_constraintEnd_toStartOf="@id/match_score"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/first_team_name" />
+
+        <View
+            android:id="@+id/second_team_form"
+            android:layout_width="40dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/no_man_sky_200"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/extra_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/match_score"
+            app:layout_constraintTop_toBottomOf="@id/second_team_name" />
+
+        <TextView
+            android:id="@+id/match_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/score_background"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:minWidth="47dp"
+            android:minHeight="32dp"
+            android:text="1 - 2"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/extra_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/extra_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:text="(wait for it)"
+            android:textColor="@color/no_man_grey_300"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintEnd_toEndOf="@id/match_score"
+            app:layout_constraintStart_toStartOf="@id/match_score"
+            app:layout_constraintTop_toBottomOf="@id/match_score" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>
