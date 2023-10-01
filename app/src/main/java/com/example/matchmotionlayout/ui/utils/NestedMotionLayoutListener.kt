@@ -18,7 +18,7 @@ class NestedMotionLayoutListener(
 
     private var lastProgress: Float? = null
 
-    private var nestedMotionLayouts: List<MotionLayout> =
+    private val nestedMotionLayouts: List<MotionLayout> =
         rootLayout.children.toList().findNestedMotionLayouts()
 
     override fun onTransitionStarted(
@@ -85,7 +85,9 @@ class NestedMotionLayoutListener(
 
     fun clear() {
         rootLayout.removeTransitionListener(this@NestedMotionLayoutListener)
-        nestedMotionLayouts.firstOrNull()?.removeTransitionListener(this@NestedMotionLayoutListener)
+        nestedMotionLayouts.forEach { layout ->
+            layout.removeTransitionListener(this@NestedMotionLayoutListener)
+        }
     }
 
     private fun updateNestedMotionLayouts(
@@ -94,13 +96,11 @@ class NestedMotionLayoutListener(
     ) {
         if (motionLayout == null) return
 
-        lastProgress = progress ?: motionLayout.progress
-
-        lastProgress?.let { motionProgress ->
+        lastProgress = (progress ?: motionLayout.progress).also { motionProgress ->
             if (motionLayout.id == rootLayout.id) {
-                rootLayout.children.filterIsInstance<MotionLayout>().firstOrNull()?.progress =
-                    motionProgress
-                nestedMotionLayouts.forEach { it.progress = motionProgress }
+                nestedMotionLayouts.forEach { layout ->
+                    layout.progress = motionProgress
+                }
             }
         }
     }
