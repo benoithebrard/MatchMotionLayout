@@ -47,11 +47,28 @@
             android:layout_height="0dp"
             android:background="@color/no_man_grey_100"
             android:elevation="1dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
             app:layout_constraintTop_toBottomOf="@id/top_info_banner">
 
             <include
                 layout="@layout/item_scoreboard_overall_score"
+                app:viewModel="@{viewModel}" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/periods_scoreboard_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/no_man_grey_100"
+            android:elevation="1dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/guideline_header_bottom"
+            app:layout_constraintTop_toBottomOf="@id/top_info_banner">
+
+            <include
+                layout="@layout/item_scoreboard_periods_score"
                 app:viewModel="@{viewModel}" />
 
         </FrameLayout>

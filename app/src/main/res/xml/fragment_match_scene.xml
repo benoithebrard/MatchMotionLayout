@@ -5,7 +5,7 @@
     <Transition
         android:id="@+id/match_transition_overall"
         motion:constraintSetEnd="@+id/end_overall"
-        motion:constraintSetStart="@id/start_overall"
+        motion:constraintSetStart="@id/start"
         motion:motionInterpolator="easeInOut">
 
         <OnSwipe
@@ -21,7 +21,7 @@
     <Transition
         android:id="@+id/match_transition_overall_legacy"
         motion:constraintSetEnd="@+id/end_legacy"
-        motion:constraintSetStart="@id/start_legacy"
+        motion:constraintSetStart="@id/start"
         motion:motionInterpolator="easeInOut">
 
         <OnSwipe
@@ -34,8 +34,23 @@
 
     </Transition>
 
+    <Transition
+        android:id="@+id/match_transition_periods"
+        motion:constraintSetEnd="@+id/end_periods"
+        motion:constraintSetStart="@id/start"
+        motion:motionInterpolator="easeInOut">
 
-    <ConstraintSet android:id="@+id/start_legacy" />
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:dragScale="1"
+            motion:moveWhenScrollAtTop="true"
+            motion:onTouchUp="autoComplete"
+            motion:touchAnchorId="@id/scrollable_content"
+            motion:touchAnchorSide="top" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start" />
 
     <ConstraintSet android:id="@+id/end_legacy">
 
@@ -54,8 +69,6 @@
 
     </ConstraintSet>
 
-    <ConstraintSet android:id="@+id/start_overall" />
-
     <ConstraintSet android:id="@+id/end_overall">
 
         <Constraint
@@ -72,4 +85,22 @@
             motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
 
     </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end_periods">
+
+        <Constraint
+            android:id="@+id/guideline_header_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintGuide_begin="108dp" />
+
+        <Constraint
+            android:id="@id/primary_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            motion:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
+            motion:layout_constraintTop_toBottomOf="@id/guideline_header_bottom" />
+
+    </ConstraintSet>
+
 </MotionScene>

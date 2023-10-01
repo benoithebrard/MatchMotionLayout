@@ -4,8 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.motion.widget.MotionLayout
-import androidx.core.view.children
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.matchmotionlayout.R
 import com.example.matchmotionlayout.databinding.FragmentMatchBinding
@@ -39,12 +38,15 @@ class PeriodsMatchFragment : Fragment() {
         ).commit()
 
         viewBinding?.apply {
-          /*  motionListener = NestedMotionLayoutListener(viewLifecycleOwner, this).also { listener ->
+            motionListener = NestedMotionLayoutListener(
+                lifecycleOwner = viewLifecycleOwner,
+                rootLayout = rootContainer
+            ).also { listener ->
                 listener.setup()
-            }*/
-            rootContainer.setTransition(R.id.match_transition_overall)
-            (overallScoreboardContainer.children.first() as MotionLayout).setTransition(R.id.scoreboard_transition_overall)
-            guidelineHeaderBottom.setGuidelineBegin(100.dpToPx.toInt())
+            }
+            rootContainer.setTransition(R.id.match_transition_periods)
+            periodsScoreboardContainer.isVisible = true
+            guidelineHeaderBottom.setGuidelineBegin(132.dpToPx.toInt())
         }
     }
 

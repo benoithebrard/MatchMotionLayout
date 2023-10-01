@@ -41,6 +41,7 @@ class OverallNoIconMatchFragment : Fragment() {
         ).commit()
 
         viewBinding?.apply {
+            overallScoreboardContainer.isVisible = true
             val overallScoreboardMotionLayout =
                 overallScoreboardContainer.children.first() as MotionLayout
             motionListener = NestedMotionLayoutListener(
