@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/scoreboard_transition_period"
+        motion:constraintSetEnd="@+id/end_scoreboard_period"
+        motion:constraintSetStart="@id/start"
+        motion:motionInterpolator="easeInOut" />
+
+    <KeyFrameSet>
+        <KeyAttribute
+            motion:framePosition="0"
+            motion:motionTarget="@id/middle_score_separator">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </KeyAttribute>
+
+        <KeyAttribute
+            motion:framePosition="50"
+            motion:motionTarget="@id/middle_score_separator">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0" />
+        </KeyAttribute>
+    </KeyFrameSet>
+
+    <ConstraintSet android:id="@id/start" />
+
+    <ConstraintSet android:id="@id/end_scoreboard_period">
+
+        <Constraint
+            android:id="@id/guideline_first_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintGuide_begin="24dp" />
+
+        <Constraint
+            android:id="@id/guideline_second_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintGuide_begin="52dp" />
+
+        <Constraint
+            android:id="@id/guideline_period_header_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintGuide_begin="76dp" />
+
+    </ConstraintSet>
+
+</MotionScene>
