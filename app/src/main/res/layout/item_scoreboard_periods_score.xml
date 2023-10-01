@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -114,17 +115,18 @@
             app:layout_constraintStart_toEndOf="@id/second_team_icon"
             app:layout_constraintTop_toTopOf="@id/guideline_second_team" />
 
-        <View
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/period_scores"
             android:layout_width="200dp"
             android:layout_height="0dp"
-            android:layout_marginVertical="12dp"
-            android:layout_marginStart="4dp"
-            android:background="@android:color/holo_purple"
+            android:orientation="horizontal"
+            app:adapter="@{viewModel.horizontalAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/guideline_periods_header_bottom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/middle_team_separator"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/mock_horizontal_list_item" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>

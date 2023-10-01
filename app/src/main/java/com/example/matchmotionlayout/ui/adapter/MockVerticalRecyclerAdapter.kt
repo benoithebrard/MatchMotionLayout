@@ -6,7 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.matchmotionlayout.R
 
-class MockRecyclerAdapter : RecyclerView.Adapter<MockRecyclerAdapter.ViewHolder>() {
+class MockVerticalRecyclerAdapter : RecyclerView.Adapter<MockVerticalRecyclerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -14,12 +14,12 @@ class MockRecyclerAdapter : RecyclerView.Adapter<MockRecyclerAdapter.ViewHolder>
     ): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.dummy_list_item, parent, false) as ConstraintLayout
+                .inflate(R.layout.mock_vertical_list_item, parent, false) as ConstraintLayout
         )
     }
 
     override fun getItemCount(): Int {
-        return 100
+        return 50
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = Unit
