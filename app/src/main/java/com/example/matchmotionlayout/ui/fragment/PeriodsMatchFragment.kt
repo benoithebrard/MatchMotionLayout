@@ -40,16 +40,19 @@ class PeriodsMatchFragment : Fragment() {
         ).commit()
 
         viewBinding?.apply {
-            motionListener = NestedMotionLayoutListener(
-                lifecycleOwner = viewLifecycleOwner,
-                rootLayout = rootContainer
-            ).also { listener ->
-                listener.setup()
-            }
-            rootContainer.setTransition(R.id.match_transition_periods)
             periodsScoreboardContainer.isVisible = true
             val periodsScoreboardMotionLayout =
                 periodsScoreboardContainer.children.first() as MotionLayout
+            motionListener = NestedMotionLayoutListener(
+                lifecycleOwner = viewLifecycleOwner,
+                rootLayout = rootContainer,
+                subRootLayout = periodsScoreboardMotionLayout
+            )
+            rootContainer.setTransition(R.id.match_transition_periods)
+            /*  motionListener = NestedMotionLayoutListener(
+                  lifecycleOwner = viewLifecycleOwner,
+                  rootLayout = periodsScoreboardMotionLayout
+              )*/
             periodsScoreboardMotionLayout.setTransition(R.id.scoreboard_transition_periods)
             guidelineHeaderBottom.setGuidelineBegin(132.dpToPx.toInt())
         }

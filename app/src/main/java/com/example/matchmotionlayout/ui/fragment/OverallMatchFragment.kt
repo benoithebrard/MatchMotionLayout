@@ -46,9 +46,7 @@ class OverallMatchFragment : Fragment() {
             motionListener = NestedMotionLayoutListener(
                 lifecycleOwner = viewLifecycleOwner,
                 rootLayout = rootContainer
-            ).also { listener ->
-                listener.setup()
-            }
+            )
             rootContainer.setTransition(R.id.match_transition_overall)
             overallScoreboardMotionLayout.setTransition(R.id.scoreboard_transition_overall)
             guidelineHeaderBottom.setGuidelineBegin(126.dpToPx.toInt())

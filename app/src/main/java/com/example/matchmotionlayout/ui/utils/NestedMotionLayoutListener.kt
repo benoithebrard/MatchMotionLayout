@@ -4,22 +4,31 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.children
+import androidx.core.view.doOnLayout
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+/**
+ * Listen to progress from a root [MotionLayout], and propagate it to its children [MotionLayout]
+ *
+ * @param lifecycleOwner: the fragment lifecycle
+ * @param rootLayout: the main root [MotionLayout]
+ * @param subRootLayout: a sub [MotionLayout] that contains a [RecyclerView] of [MotionLayout]
+ */
 class NestedMotionLayoutListener(
     private val lifecycleOwner: LifecycleOwner,
-    private val rootLayout: MotionLayout
+    private val rootLayout: MotionLayout,
+    private val subRootLayout: MotionLayout? = null
 ) : MotionLayout.TransitionListener {
 
     private var lastProgress: Float? = null
 
-    private val nestedMotionLayouts: List<MotionLayout> =
-        rootLayout.children.toList().findNestedMotionLayouts()
+    private var nestedMotionLayouts: Set<MotionLayout> = emptySet()
 
     override fun onTransitionStarted(
         motionLayout: MotionLayout?,
@@ -54,10 +63,18 @@ class NestedMotionLayoutListener(
         updateNestedMotionLayouts(motionLayout, progress)
     }
 
-    fun setup() {
-        rootLayout.setTransitionListener(this@NestedMotionLayoutListener)
-        nestedMotionLayouts.forEach { it.setTransitionListener(this@NestedMotionLayoutListener) }
-        autoSnapWorkaround()
+    init {
+        rootLayout.doOnLayout {
+            rootLayout.setTransitionListener(this@NestedMotionLayoutListener)
+            nestedMotionLayouts = rootLayout.children.toList().findNestedMotionLayouts().toSet()
+            nestedMotionLayouts += subRootLayout?.children?.toList()?.findNestedMotionLayouts()
+                ?.toSet()
+                ?: emptySet()
+            nestedMotionLayouts.forEach { motionLayout ->
+                motionLayout.setTransitionListener(this@NestedMotionLayoutListener)
+            }
+            autoSnapWorkaround()
+        }
     }
 
     private fun autoSnapWorkaround() {
@@ -98,8 +115,8 @@ class NestedMotionLayoutListener(
 
         lastProgress = (progress ?: motionLayout.progress).also { motionProgress ->
             if (motionLayout.id == rootLayout.id) {
-                nestedMotionLayouts.forEach { layout ->
-                    layout.progress = motionProgress
+                nestedMotionLayouts.forEach { motionLayout ->
+                    motionLayout.progress = motionProgress
                 }
             }
         }
@@ -110,6 +127,11 @@ class NestedMotionLayoutListener(
             when (view) {
                 is MotionLayout -> {
                     motionLayouts + view
+                }
+
+                is RecyclerView -> {
+                    val childViews = (0 until view.childCount).map { view.getChildAt(it) }
+                    motionLayouts + childViews.findNestedMotionLayouts()
                 }
 
                 is ViewGroup -> {
