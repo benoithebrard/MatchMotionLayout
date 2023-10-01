@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:barrierDirection="top"
-            app:constraint_referenced_ids="overall_scoreboard_container, overall_legacy_scoreboard" />
+            app:constraint_referenced_ids="overall_scoreboard_container, periods_scoreboard_container, overall_legacy_scoreboard" />
 
         <FrameLayout
             android:id="@+id/overall_scoreboard_container"
