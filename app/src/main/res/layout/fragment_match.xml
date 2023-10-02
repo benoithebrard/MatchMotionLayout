@@ -118,7 +118,7 @@
             android:layout_height="48dp"
             android:background="@color/no_man_grey_700"
             android:elevation="2dp"
-            app:layout_constraintBottom_toTopOf="@id/secondary_tab_layout"
+            app:layout_constraintBottom_toTopOf="@id/scrollable_content"
             app:layout_constraintTop_toBottomOf="@id/streaming_player" />
 
         <TextView
